@@ -61,7 +61,48 @@
     since the feature map size which pass each stage gets smaller, and it can play a role as 'hierarchical representation' such as FPN, UNet)
 4. It continues each stage with a same process, with different amount of iterations ([2,2,6,2])
 
+[ TOBEDONE ]
+
+#### Shifted Window based Self-Attention
+
+#### Architect Variants
+```
+• Swin-T: C = 96, layer numbers = {2, 2, 6, 2}
+• Swin-S: C = 96, layer numbers ={2, 2, 18, 2}
+• Swin-B: C = 128, layer numbers ={2, 2, 18, 2}
+• Swin-L: C = 192, layer numbers ={2, 2, 18, 2}
+```
 
 ## Experiments
+- experiments conducted with ImageNet-1K image classification / COCO object detection, ADE20K semantic segmentation.
+<p align="center">
+  <img width="800" height="600" src="https://user-images.githubusercontent.com/32179857/124850442-94ab0580-dfdb-11eb-950c-2a694030c4da.png">
+</p>
+
+1. Classification
+   - AdamW optimizer
+   - 300 epoch
+   - 20 epoch learning rate warmup
+   - batch 1024
+   - ImageNet-22K pretrained
+
+
+2. Object Detection
+    - Multi-scale training
+    - AdamW optimizer
+    - batch 16
+
+
+3. Sementic Segmentation
+<p align="center">
+  <img width="400" height="400" src="https://user-images.githubusercontent.com/32179857/124850628-f4a1ac00-dfdb-11eb-97be-355f1271b5b4.png">
+</p>
+   
+   
+### Ablation Study
+<p align="center">
+  <img width="800" height="500" src="https://user-images.githubusercontent.com/32179857/124851005-a8a33700-dfdc-11eb-9593-195bf6a19c75.png">
+</p>
+
 
 ## Conclusion
