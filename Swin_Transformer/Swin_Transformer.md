@@ -61,7 +61,7 @@
     since the feature map size which pass each stage gets smaller, and it can play a role as 'hierarchical representation' such as FPN, UNet)
 4. It continues each stage with a same process, with different amount of iterations ([2,2,6,2])
 
-[ TOBEDONE ]
+[ TBD ]
 
 #### Shifted Window based Self-Attention
 
@@ -106,3 +106,4 @@
 
 
 ## Conclusion
+[TBD]
