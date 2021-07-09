@@ -514,6 +514,21 @@ class PatchMerging(nn.Module):
 &nbsp;
 &nbsp;
 
+## Training / Inference process
+- This description is for the source from [Official repo.](https://github.com/microsoft/Swin-Transformer).
+
+#### Classification
+- For classification task, the model is based on [timm](https://pypi.org/project/timm/) pacakge.
+- With the formatted directory structure and annotations, we can train / test the model easily.
+- Refer: https://github.com/microsoft/Swin-Transformer/blob/main/get_started.md
+
+#### Detection
+- For Detection task, the model is based on [mmdetection](https://github.com/open-mmlab/mmdetection) toolbox
+- Swin Trasnformer for Object Detection: https://github.com/SwinTransformer/Swin-Transformer-Object-Detection
+- Due to the mmdetection, all the model / dataset structures are setup with **config** files.
+- There exists **__base__** configs for the dataset / models, and they are imported at other specific model configs.
+
+
 ### References
 - https://byeongjo-kim.tistory.com/36
 - https://mlfromscratch.com/activation-functions-explained/#/
