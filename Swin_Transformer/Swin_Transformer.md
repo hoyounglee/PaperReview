@@ -35,6 +35,8 @@
 - **Self-attention based backbone architectures**
     - In these works, the self-attention is computed within a local window of each pixel to expedite optimization, and they achieve slightly better acc.
     - However, costly memory access causes significantly larger latency.
+    - ![image](https://user-images.githubusercontent.com/32179857/125021485-b4aef780-e0b5-11eb-8f4e-f1078fda2128.png)
+
 - **Self-attention/Transformers to complement CNNs**
     - Self-attention layers can complement backbones or head networks by providing the capability to encode distant dependencies or heterogeneous interactions.
     - Recently, encoder-decoder design in Transformer has been applied for OD nd Seg. tasks.
