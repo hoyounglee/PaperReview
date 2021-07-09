@@ -38,6 +38,7 @@
 - **Self-attention/Transformers to complement CNNs**
     - Self-attention layers can complement backbones or head networks by providing the capability to encode distant dependencies or heterogeneous interactions.
     - Recently, encoder-decoder design in Transformer has been applied for OD nd Seg. tasks.
+    - [Self-attention Transformer Encoder](https://theaisummer.com/transformer/#self-attention-the-transformer-encoder)
 - **Transformer based vision backbones**
     - Vision Transformer (ViT) and its follow-ups.
     - ViT directly applies a Transformer architecture on non-overlapping medium-sized image patches for classification.
@@ -72,7 +73,8 @@
 - Swin Transformer block
     - Swin Transformer block is built by replacing the standard multi-head self attention (MSA) module by a module based on shifted windows, with other layers kept same.
     - It consists of a shifted window based MSA module, followed by a 2-layer MLP(multi layer perceptron) with GELU non-linearity in between.
-
+    - [Multi-head Attention](https://theaisummer.com/transformer/#the-core-building-block-multi-head-attention-and-parallel-implementation)
+    
         ![image](https://user-images.githubusercontent.com/32179857/125007362-fbdbbf00-e09a-11eb-8cd0-4d7cb65f9be4.png)
         ![image](https://user-images.githubusercontent.com/32179857/125007379-06965400-e09b-11eb-8c47-23c051108261.png)
 
