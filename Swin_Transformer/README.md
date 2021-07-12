@@ -575,8 +575,10 @@ class PatchMerging(nn.Module):
 - There are things to modify / add to train / test with custom dataset
   1. Add custom dataset script.py at mmdet/datasts by duplicating coco.py or other format. 
   2. Edit CLASSES with the class name (ex: ('fire',))
+     
      2.1. if only 1 class, must need to add comma after 'class'
   3. Add config file for model option. duplicate scripts at configs/swin/
+    
      3.1. need to change num_classes to the amount of you want to train
   5. Add coco_instance_custom.py or other format by referring coco_instance.py at configs/__base__/datasets/coco_instance.py
 
