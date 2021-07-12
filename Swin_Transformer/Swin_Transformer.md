@@ -568,7 +568,7 @@ class PatchMerging(nn.Module):
 - Swin Trasnformer for Object Detection: https://github.com/SwinTransformer/Swin-Transformer-Object-Detection
 - Due to the mmdetection, all the model / dataset structures are setup with **config** files.
 - There exists **__base__** configs for the dataset / models, and they are imported at other specific model configs.
-**- For Swin, it does not support single GPU training script so run with tools/train_dist.sh with #gpu = 1 parameter. **
+- **For Swin, it does not support single GPU training script so run with tools/train_dist.sh with #gpu = 1 parameter.**
 
 
 ### References
