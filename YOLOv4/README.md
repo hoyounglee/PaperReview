@@ -4,7 +4,10 @@
 ### Main contribution
 1. Utilize SOTA Bag-of-Freebies and Bag-of-Specials methods during detector training
 * Back of Freebies (only change the training strategy or only  increase the training cost method)
-  Data augmentation
+  - Data augmentation
+  - Regularization
+  - Loss function
+* Bag of specials
 
 3. Modify SOTA methods(CBN, PAN, SAM, etc) and make them to be available sing GPU training
 
