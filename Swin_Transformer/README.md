@@ -571,6 +571,15 @@ class PatchMerging(nn.Module):
 - There exists **__base__** configs for the dataset / models, and they are imported at other specific model configs.
 - **For Swin, it does not support single GPU training script so run with tools/train_dist.sh with #gpu = 1 parameter.**
 
+#### For Custom Dataset
+- There are things to modify / add to train / test with custom dataset
+  1. Add custom dataset script.py at mmdet/datasts by duplicating coco.py or other format. 
+  2. Edit CLASSES with the class name (ex: ('fire',))
+     2.1. if only 1 class, must need to add comma after 'class'
+  3. Add config file for model option. duplicate scripts at configs/swin/
+     3.1. need to change num_classes to the amount of you want to train
+  5. Add coco_instance_custom.py or other format by referring coco_instance.py at configs/__base__/datasets/coco_instance.py
+
 
 ### References
 - https://byeongjo-kim.tistory.com/36
