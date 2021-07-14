@@ -1,10 +1,14 @@
 # YOLOv4
+1. Performance of YOLOv4
 <img width="621" alt="image" src="https://user-images.githubusercontent.com/6396598/125368520-56d02780-e3b5-11eb-9188-18861b026389.png">
-
+* Twice faster than EfficientDet
+* 
 ### Main contribution
 1. Utilize SOTA Bag-of-Freebies and Bag-of-Specials methods during detector training
 * Back of Freebies (only change the training strategy or only  increase the training cost method)
   - Data augmentation
+  -- Mosaic augmentation
+  -- Self adversarial training
   - Regularization
   - Loss function
 * Bag of specials
