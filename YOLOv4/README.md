@@ -22,6 +22,8 @@
 
 <img align="center" src = "https://user-images.githubusercontent.com/6396598/125715565-098686aa-518d-4956-847f-d4ef0f18fc08.png" width="80%" height="80%">
 
+# YOLO9000(https://arxiv.org/abs/1612.08242)
+
 # YOLOv3
 
 ### Main contribution
@@ -40,10 +42,10 @@
 
 1. Performance of YOLOv4
 
-<img src="https://user-images.githubusercontent.com/6396598/125368520-56d02780-e3b5-11eb-9188-18861b026389.png" width="50%" height="50%">
 
-* Twice faster than EfficientDet
+<img aligh="left" src="https://user-images.githubusercontent.com/6396598/125368520-56d02780-e3b5-11eb-9188-18861b026389.png" width="40%" height="40%">
 
+* Twice faster than EfficientDet 
 * Improved 10% AP and 12 % FPS than YOLOv3
 
 ## Main contribution
@@ -54,10 +56,22 @@
 <img align="center" src = "https://user-images.githubusercontent.com/6396598/125727259-644d3cbc-3e5f-4748-a298-36664a575d2a.png" width="50%" height="50%">
 
  - Data augmentation
+ 
+   <img align="center" src = "https://user-images.githubusercontent.com/6396598/125741393-102239e1-e021-4e14-b11d-cfe62e41093f.png" width="50%" height="50%">
+
    - Random erase and CutOut: randomly select the rectangle regions in an image and fill in a random value or zero.
-   - MixUp: 
-   - CutMix:
+   - MixUp: multiply 2 images and superimpose with differenct coefficient ratios
+   - CutMix:cover the cropped image to rectangle region of other images
    - Styletransfer GAN
+   - Mosaic: mixes 4 training images <img align="right" src = "https://user-images.githubusercontent.com/6396598/125745632-86f902b8-c129-4cb0-bead-886f7c1129f6.png" width="50%" height="50%">
+
+   - Styletransfer GAN
+ - Objective function of BBox regression
+   - MSE (Meab Sqared Error)
+   - IoU
+   - GIoU: Consider the shape and orientation of obbjects
+   - DIoU: Additionly consider the distance of the center of an object
+   - CIoU: Simultaneously considers the overlapping area, the distance between center points, and the aspect ratio.
  - Regularization
    - DropOut:
    - DropPath:
@@ -65,6 +79,7 @@
    - DropBlock: 
    
 **Bag of specials**
+
 <img align="center" src = "https://user-images.githubusercontent.com/6396598/125727338-2399db94-db02-41e5-8f28-8bc022220224.png" width="50%" height="50%">
 
 ### 2. Modify SOTA methods(CBN, PAN, SAM, etc) and make them to be available sing GPU training
