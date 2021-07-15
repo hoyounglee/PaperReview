@@ -37,21 +37,26 @@
 
 # YOLOv4
 1. Performance of YOLOv4
-2. 
+
 <img src="https://user-images.githubusercontent.com/6396598/125368520-56d02780-e3b5-11eb-9188-18861b026389.png" width="50%" height="50%">
 
 * Twice faster than EfficientDet
-* 
+
+* Improved 10% AP and 12 % FPS than YOLOv3
+
 ## Main contribution
 
 1. Utilize SOTA Bag-of-Freebies and Bag-of-Specials methods during detector training
+
 **Back of Freebies (only change the training strategy or only  increase the training cost method)**
+
 ![image](https://user-images.githubusercontent.com/6396598/125727259-644d3cbc-3e5f-4748-a298-36664a575d2a.png)
 
 **Bag of specials**
+
 ![image](https://user-images.githubusercontent.com/6396598/125727338-2399db94-db02-41e5-8f28-8bc022220224.png)
 
-3. Modify SOTA methods(CBN, PAN, SAM, etc) and make them to be available sing GPU training
+2. Modify SOTA methods(CBN, PAN, SAM, etc) and make them to be available sing GPU training
 
 
 ## Appendix
