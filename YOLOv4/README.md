@@ -40,13 +40,18 @@
 
 # YOLOv4
 
-1. Performance of YOLOv4
+## Overview
 
+1. Performance
+ <img aligh="center" src="https://user-images.githubusercontent.com/6396598/125368520-56d02780-e3b5-11eb-9188-18861b026389.png" width="40%" height="40%">
+  * Twice faster than EfficientDet 
 
-<img aligh="left" src="https://user-images.githubusercontent.com/6396598/125368520-56d02780-e3b5-11eb-9188-18861b026389.png" width="40%" height="40%">
+  * Improved 10% AP and 12 % FPS than YOLOv3
 
-* Twice faster than EfficientDet 
-* Improved 10% AP and 12 % FPS than YOLOv3
+2. Network Architecture
+  <img aligh="center" src="https://user-images.githubusercontent.com/6396598/125764022-a4a43460-0bd9-4f3b-9369-786564a20d2d.png" width="60%" height="60%">
+
+   YOLOv4 = CSPDarknet53 backbone + SPP additional module + PANet path-aggregation neck + YOLOv3 head
 
 ## Main contribution
 
@@ -85,9 +90,11 @@
  - CBN (Cross Iteration Batch Normalization)
  
  - PAN (Path Aggregation Network)
- 
+ <img align="center" src = "https://user-images.githubusercontent.com/6396598/125761460-e482de59-e2df-48e0-87c5-21ef7c443ed3.png" width="50%" height="50%">
+
  - SAM (Spatial Attention Module)
- 
+ <img align="center" src = "https://user-images.githubusercontent.com/6396598/125761346-03bd2fab-4d56-4523-ad3e-bf94dc4aad85.png" width="50%" height="50%">
+
 ### 3. Architecture
  - Backbone: CSPDarknet53
  - Neck: SPP, PAN
@@ -105,6 +112,7 @@
 
 ### reference
 - YOLOv4: https://arxiv.org/pdf/2004.10934.pdf
+          https://www.youtube.com/watch?v=_JzOFWx1vZg
 - ScaledYOLOv4: https://arxiv.org/abs/2011.08036
 - Github: https://github.com/AlexeyAB/darknet
 - Hoya012's blog: https://hoya012.github.io/blog/yolov4/
