@@ -29,7 +29,7 @@
 
 1. Bounding Box Prediction
  
-<img src = "https://user-images.githubusercontent.com/6396598/125712644-2e59f0bf-a024-4697-bcf1-ce4db9d857d7.png" width="50%" height="50%">
+<img src = "https://user-images.githubusercontent.com/6396598/125712644-2e59f0bf-a024-4697-bcf1-ce4db9d857d7.png" width="30%" height="30%">
 
 2. Darknet-53
 
@@ -37,21 +37,19 @@
 
 # YOLOv4
 1. Performance of YOLOv4
-<img width="621" alt="image" src="https://user-images.githubusercontent.com/6396598/125368520-56d02780-e3b5-11eb-9188-18861b026389.png">
+2. 
+<img src="https://user-images.githubusercontent.com/6396598/125368520-56d02780-e3b5-11eb-9188-18861b026389.png" width="50%" height="50%">
+
 * Twice faster than EfficientDet
 * 
 ## Main contribution
 
 1. Utilize SOTA Bag-of-Freebies and Bag-of-Specials methods during detector training
-2. 
-* Back of Freebies (only change the training strategy or only  increase the training cost method)
+**Back of Freebies (only change the training strategy or only  increase the training cost method)**
+![image](https://user-images.githubusercontent.com/6396598/125727259-644d3cbc-3e5f-4748-a298-36664a575d2a.png)
 
-  - Data augmentation
-  -- Mosaic augmentation
-  -- Self adversarial training
-  - Regularization
-  - Loss function
-* Bag of specials
+**Bag of specials**
+![image](https://user-images.githubusercontent.com/6396598/125727338-2399db94-db02-41e5-8f28-8bc022220224.png)
 
 3. Modify SOTA methods(CBN, PAN, SAM, etc) and make them to be available sing GPU training
 
@@ -77,3 +75,6 @@ YOLOv4: https://arxiv.org/pdf/2004.10934.pdf
 ScaledYOLOv4: https://arxiv.org/abs/2011.08036
 
 Github: https://github.com/AlexeyAB/darknet
+
+Hoya012's blog: https://hoya012.github.io/blog/yolov4/
+
