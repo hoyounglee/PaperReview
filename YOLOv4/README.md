@@ -1,11 +1,16 @@
+# Structure of YOLO series
+1. 1 stage
 # YOLOv4
 1. Performance of YOLOv4
 <img width="621" alt="image" src="https://user-images.githubusercontent.com/6396598/125368520-56d02780-e3b5-11eb-9188-18861b026389.png">
 * Twice faster than EfficientDet
 * 
-### Main contribution
+## Main contribution
+
 1. Utilize SOTA Bag-of-Freebies and Bag-of-Specials methods during detector training
+2. 
 * Back of Freebies (only change the training strategy or only  increase the training cost method)
+
   - Data augmentation
   -- Mosaic augmentation
   -- Self adversarial training
@@ -14,6 +19,14 @@
 * Bag of specials
 
 3. Modify SOTA methods(CBN, PAN, SAM, etc) and make them to be available sing GPU training
+
+## YOLOv3
+
+### Main contribution
+1. Bounding Box Prediction
+![image](https://user-images.githubusercontent.com/6396598/125712644-2e59f0bf-a024-4697-bcf1-ce4db9d857d7.png)
+2. Darknet-53
+![image](https://user-images.githubusercontent.com/6396598/125712738-d6fb3810-d42b-4035-9c1c-be72c70d4949.png)
 
 ## Appendix
 ### object detector
