@@ -25,6 +25,7 @@
 # YOLOv3
 
 ### Main contribution
+
 ![image](https://user-images.githubusercontent.com/6396598/125713432-aa61da4c-975e-4eb4-95cc-7f42db372f0d.png)
 
 1. Bounding Box Prediction
@@ -36,6 +37,7 @@
 <img src = "https://user-images.githubusercontent.com/6396598/125712738-d6fb3810-d42b-4035-9c1c-be72c70d4949.png" width="30%" height="30%">
 
 # YOLOv4
+
 1. Performance of YOLOv4
 
 <img src="https://user-images.githubusercontent.com/6396598/125368520-56d02780-e3b5-11eb-9188-18861b026389.png" width="50%" height="50%">
@@ -46,40 +48,47 @@
 
 ## Main contribution
 
-1. Utilize SOTA Bag-of-Freebies and Bag-of-Specials methods during detector training
+### Utilize SOTA Bag-of-Freebies and Bag-of-Specials methods during detector training
 
 **Back of Freebies (only change the training strategy or only  increase the training cost method)**
 
 ![image](https://user-images.githubusercontent.com/6396598/125727259-644d3cbc-3e5f-4748-a298-36664a575d2a.png)
 
+ - Data augmentation
+   - Random erase and CutOut: randomly select the rectangle regions in an image and fill in a random value or zero.
+   - MixUp: 
+   - CutMix:
+   - Styletransfer GAN
+ - Regularization
+   - DropOut:
+   - DropPath:
+   - Spatial DropOut:
+   - DropBlock: 
+   
 **Bag of specials**
 
 ![image](https://user-images.githubusercontent.com/6396598/125727338-2399db94-db02-41e5-8f28-8bc022220224.png)
 
-2. Modify SOTA methods(CBN, PAN, SAM, etc) and make them to be available sing GPU training
+### Modify SOTA methods(CBN, PAN, SAM, etc) and make them to be available sing GPU training
 
-
-## Appendix
+### Architecture
+ - Backbone: CSPDarknet53
+ - Neck: SPP, PAN
+ - Head: YOLOv3
+ 
+# Appendix
 ### object detector
 <img width="710" alt="Screen Shot 2021-07-13 at 8 32 22 AM" src="https://user-images.githubusercontent.com/6396598/125368357-0658ca00-e3b5-11eb-9ed4-0e568fef0753.png">
 
 
 ### YOLO series
-YOLOv1: https://www.youtube.com/watch?v=eTDcoeqj1_w
-
-
-YOLO9000: https://www.youtube.com/watch?v=6fdclSGgeio
-
-
-YOLOv3: https://www.youtube.com/watch?v=HMgcvgRrDcA
-
+- YOLOv1: https://www.youtube.com/watch?v=eTDcoeqj1_w
+- YOLO9000: https://www.youtube.com/watch?v=6fdclSGgeio
+- YOLOv3: https://www.youtube.com/watch?v=HMgcvgRrDcA
 
 ### reference
-YOLOv4: https://arxiv.org/pdf/2004.10934.pdf
-
-ScaledYOLOv4: https://arxiv.org/abs/2011.08036
-
-Github: https://github.com/AlexeyAB/darknet
-
-Hoya012's blog: https://hoya012.github.io/blog/yolov4/
+- YOLOv4: https://arxiv.org/pdf/2004.10934.pdf
+- ScaledYOLOv4: https://arxiv.org/abs/2011.08036
+- Github: https://github.com/AlexeyAB/darknet
+- Hoya012's blog: https://hoya012.github.io/blog/yolov4/
 
