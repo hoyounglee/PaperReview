@@ -83,7 +83,7 @@
 <img align="center" src = "https://user-images.githubusercontent.com/6396598/125727338-2399db94-db02-41e5-8f28-8bc022220224.png" width="50%" height="50%">
 
 ### 2. Modify SOTA methods(CBN, PAN, SAM, etc) and make them to be available sing GPU training
- - CmBN (Cross mini-Batch Normalization)
+ - CBN (Cross Iteration Batch Normalization)
  
  - PAN (Path Aggregation Network)
  
