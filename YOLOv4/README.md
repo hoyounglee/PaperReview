@@ -51,8 +51,7 @@
 ### Utilize SOTA Bag-of-Freebies and Bag-of-Specials methods during detector training
 
 **Back of Freebies (only change the training strategy or only  increase the training cost method)**
-
-![image](https://user-images.githubusercontent.com/6396598/125727259-644d3cbc-3e5f-4748-a298-36664a575d2a.png)
+<img src = "https://user-images.githubusercontent.com/6396598/125727259-644d3cbc-3e5f-4748-a298-36664a575d2a.png" width="50%" height="50%">
 
  - Data augmentation
    - Random erase and CutOut: randomly select the rectangle regions in an image and fill in a random value or zero.
@@ -66,8 +65,7 @@
    - DropBlock: 
    
 **Bag of specials**
-
-![image](https://user-images.githubusercontent.com/6396598/125727338-2399db94-db02-41e5-8f28-8bc022220224.png)
+<img src = "https://user-images.githubusercontent.com/6396598/125727338-2399db94-db02-41e5-8f28-8bc022220224.png" width="50%" height="50%">
 
 ### Modify SOTA methods(CBN, PAN, SAM, etc) and make them to be available sing GPU training
 
