@@ -64,8 +64,7 @@
    - CutMix:cover the cropped image to rectangle region of other images
    - Styletransfer GAN
    - Mosaic: mixes 4 training images <img align="right" src = "https://user-images.githubusercontent.com/6396598/125745632-86f902b8-c129-4cb0-bead-886f7c1129f6.png" width="50%" height="50%">
-
-   - Styletransfer GAN
+   - Self adversarial training
  - Objective function of BBox regression
    - MSE (Meab Sqared Error)
    - IoU
