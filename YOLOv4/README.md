@@ -39,7 +39,8 @@
    - CIoU: Simultaneously considers the overlapping area, the distance between center points, and the aspect ratio.
  - Regularization
    - DropOut:
-   - DropPath:
+   - DropPath: <img align="right" src = "https://user-images.githubusercontent.com/6396598/126093821-689ab269-ceed-4ab6-a6b3-0b8f3899623a.png" width="50%" height="50%">
+
    - Spatial DropOut:
    - DropBlock: <img align="right" src = "https://user-images.githubusercontent.com/6396598/126093042-811fd4aa-c9e6-48b1-892e-d5f88779d7c1.png" width="50%" height="50%">
 
@@ -59,6 +60,9 @@
 
 ### 3. Architecture
  - Backbone: CSPDarknet53
+  - Bag of Freebies for backbone: CutMix, Mosaic data augmentation, DropBlock, Class label smoothing
+  - Bag of Specials for backbone: Mish activation, Cross-stage partial connections (CSP), Multi-input weighted residual conncections (MiWRC)
+  
  - Neck: SPP, PAN
  - Head: YOLOv3
  
