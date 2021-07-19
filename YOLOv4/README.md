@@ -1,22 +1,37 @@
 # YOLOv4
 
-### Overview
+## Overview
 
 1. Performance: 2 times faster than EfficientDet, 10% AP and 12% fps higher than YOLOv3
  <img aligh="center" src="https://user-images.githubusercontent.com/6396598/125368520-56d02780-e3b5-11eb-9188-18861b026389.png" width="40%" height="40%">
   
 2. Network Architecture:YOLOv4 = CSPDarknet53 backbone + SPP additional module + PANet path-aggregation neck + YOLOv3 head
-  <img aligh="center" src="https://user-images.githubusercontent.com/6396598/125764022-a4a43460-0bd9-4f3b-9369-786564a20d2d.png" width="80%" height="80%">
-
-   
-
+  
 3. Utilize SOTA Bag-of-Freebies and Bag-of-Specials methods during the detector training
 
 4. Modify SOTA methods and make them more effecient and suitabble for single GPU training
 
-### Main contribution
+## Architecture
 
-#### 1. Utilize SOTA Bag-of-Freebies and Bag-of-Specials methods during detector training
+<img aligh="center" src="https://user-images.githubusercontent.com/6396598/125764022-a4a43460-0bd9-4f3b-9369-786564a20d2d.png" width="80%" height="80%">
+
+### 1. Backbone: CSPDarknet53
+  - CSPDarknet53 = CSPNet + Darknet53 (YOLOv3)
+    - CSPNet(Cross Stage Partial Network) [ref: https://arxiv.org/pdf/1911.11929.pdf]
+  ![Screen Shot 2021-07-19 at 1 50 54 PM](https://user-images.githubusercontent.com/6396598/126104791-f9e03698-b66f-4c1e-bf0e-7121e70924a6.png)
+
+  - Bag of Freebies for backbone: CutMix, Mosaic data augmentation, DropBlock, Class label smoothing
+  
+  - Bag of Specials for backbone: Mish activation, Cross-stage partial connections (CSP), Multi-input weighted residual conncections (MiWRC)
+    - Mish activation:  f(x) = x tanh(softplus(x))[ref:https://arxiv.org/pdf/1908.08681.pdf] <img aligh="right" src="https://user-images.githubusercontent.com/6396598/126107984-9458640a-c5fd-4e3a-9991-795f8f58886d.png" width="50%" height="50%">
+
+### 2. Neck: SPP, PAN
+
+### 3. Head: YOLOv3
+ 
+## Main contribution
+
+### 1. Utilize SOTA Bag-of-Freebies and Bag-of-Specials methods during detector training
 
 **Back of Freebies (only change the training strategy or only  increase the training cost method)**
 <img align="center" src = "https://user-images.githubusercontent.com/6396598/125727259-644d3cbc-3e5f-4748-a298-36664a575d2a.png" width="50%" height="50%">
@@ -58,16 +73,12 @@
  - SAM (Spatial Attention Module)
  <img align="center" src = "https://user-images.githubusercontent.com/6396598/125761346-03bd2fab-4d56-4523-ad3e-bf94dc4aad85.png" width="50%" height="50%">
 
-### 3. Architecture
- - Backbone: CSPDarknet53
-  - Bag of Freebies for backbone: CutMix, Mosaic data augmentation, DropBlock, Class label smoothing
-  - Bag of Specials for backbone: Mish activation, Cross-stage partial connections (CSP), Multi-input weighted residual conncections (MiWRC)
-  
- - Neck: SPP, PAN
- - Head: YOLOv3
- 
+## Experiments
+1. Influence of BoF and Mish on CSPResNeXt-50 and CSPDarknet-53
+![image](https://user-images.githubusercontent.com/6396598/126107451-43be69ec-0921-4038-a5ba-d90f83de7ab2.png)
 
-### reference
+
+## reference
 
 - YOLOv4: https://arxiv.org/pdf/2004.10934.pdf
          https://www.youtube.com/watch?v=_JzOFWx1vZg   
