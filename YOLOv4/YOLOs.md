@@ -61,5 +61,7 @@
 ### YOLO series
 
 YOLOv1: https://www.youtube.com/watch?v=eTDcoeqj1_w
+
 YOLO9000: https://www.youtube.com/watch?v=6fdclSGgeio
+
 YOLOv3: https://www.youtube.com/watch?v=HMgcvgRrDcA
