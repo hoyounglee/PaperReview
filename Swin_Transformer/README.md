@@ -587,6 +587,7 @@ class PatchMerging(nn.Module):
 - https://byeongjo-kim.tistory.com/36
 - https://www.youtube.com/watch?v=AA621UofTUA
 - https://mlfromscratch.com/activation-functions-explained/#/
+- https://wikidocs.net/31379
 - https://visionhong.tistory.com/31
 - https://github.com/microsoft/Swin-Transformer
 - https://xzcodes.github.io/posts/paper-review-swin-transformer
