@@ -19,3 +19,19 @@ cmake --build . --target install --parallel 8
 ```
 
 ## Build Error
+### issue 1[https://github.com/AlexeyAB/darknet/issues/7486]
+```
+./src/network_kernels.cu(364): warning: variable "l" was declared but never referenced
+./src/network_kernels.cu(694): error: identifier "cudaGraphExec_t" is undefined
+./src/network_kernels.cu(697): error: identifier "cudaGraph_t" is undefined
+./src/network_kernels.cu(706): error: identifier "cudaStreamCaptureModeGlobal" is undefined
+./src/network_kernels.cu(706): error: identifier "cudaStreamBeginCapture" is undefined
+./src/network_kernels.cu(714): error: identifier "cudaStreamEndCapture" is undefined
+./src/network_kernels.cu(715): error: identifier "cudaGraphInstantiate" is undefined
+./src/network_kernels.cu(725): error: identifier "cudaGraphLaunch" is undefined
+
+7 errors detected in the compilation of "/tmp/tmpxft_00003086_00000000-9_network_kernels.compute_70.cpp1.ii".
+Makefile:185: recipe for target 'obj/network_kernels.o' failed
+make: *** [obj/network_kernels.o] Error 1
+```
+How to solve? ==> use old version darknet[ https://github.com/AlexeyAB/darknet/archive/64efa721ede91cd8ccc18257f98eeba43b73a6af.zip]
