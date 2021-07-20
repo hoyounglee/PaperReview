@@ -19,7 +19,7 @@ cmake --build . --target install --parallel 8
 ```
 
 ## Build Error
-### issue 1[https://github.com/AlexeyAB/darknet/issues/7486]
+### [issue 1](https://github.com/AlexeyAB/darknet/issues/7486)
 ```
 ./src/network_kernels.cu(364): warning: variable "l" was declared but never referenced
 ./src/network_kernels.cu(694): error: identifier "cudaGraphExec_t" is undefined
@@ -34,4 +34,4 @@ cmake --build . --target install --parallel 8
 Makefile:185: recipe for target 'obj/network_kernels.o' failed
 make: *** [obj/network_kernels.o] Error 1
 ```
-How to solve? ==> use old version darknet[ https://github.com/AlexeyAB/darknet/archive/64efa721ede91cd8ccc18257f98eeba43b73a6af.zip]
+How to solve? ==> use old version darknet [Link](https://github.com/AlexeyAB/darknet/archive/64efa721ede91cd8ccc18257f98eeba43b73a6af.zip)
