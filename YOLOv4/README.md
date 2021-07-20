@@ -33,7 +33,9 @@
       - Loss 값이 smoothing 되는 효과가 있습니다.
 
 ### 2. Neck: SPP, PAN
- - SPP (Spatial Pyramid Pooling)
+ - SPP (Spatial Pyramid Pooling) 
+ - <img aligh="center" src="https://user-images.githubusercontent.com/6396598/126275562-99d17929-b9b3-4d6f-b325-e71b0fa28ac7.png" width="50%" height="50%">
+
 ### 3. Head: YOLOv3
  
 ## Main contribution
