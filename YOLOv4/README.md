@@ -15,6 +15,8 @@
 
 <img aligh="center" src="https://user-images.githubusercontent.com/6396598/125764022-a4a43460-0bd9-4f3b-9369-786564a20d2d.png" width="80%" height="80%">
 
+![image](https://user-images.githubusercontent.com/6396598/126260993-fe9a823d-5098-41f3-8a3e-d3d4ce75f39f.png)
+
 ### 1. Backbone: CSPDarknet53
   - CSPDarknet53 = CSPNet + Darknet53 (YOLOv3)
     - CSPNet(Cross Stage Partial Network) [ref: https://arxiv.org/pdf/1911.11929.pdf]
@@ -23,10 +25,15 @@
   - Bag of Freebies for backbone: CutMix, Mosaic data augmentation, DropBlock, Class label smoothing
   
   - Bag of Specials for backbone: Mish activation, Cross-stage partial connections (CSP), Multi-input weighted residual conncections (MiWRC)
-    - Mish activation:  f(x) = x tanh(softplus(x))[ref:https://arxiv.org/pdf/1908.08681.pdf] <img aligh="right" src="https://user-images.githubusercontent.com/6396598/126107984-9458640a-c5fd-4e3a-9991-795f8f58886d.png" width="50%" height="50%">
+    - Mish activation:  f(x) = x tanh(softplus(x)) [ref:https://arxiv.org/pdf/1908.08681.pdf] <img aligh="right" src="https://user-images.githubusercontent.com/6396598/126107984-9458640a-c5fd-4e3a-9991-795f8f58886d.png" width="50%" height="50%">
+      - Mish는 작은 음의 값을 허용하여 더 나온 표현력과 정보 흐름을 돕습니다.
+      - Mish는 양의 값에 대해서 제한이 없기 때문에 saturation을 방지합니다. 이는 기울기 소실로 인해 발생하는 학습 지연 문제를 해결합니다.
+      - Mish의 출력값 범위는 [-0.31, 무한] 입니다. 음의 값이 -0.31로 제한되기 때문에 강력한 정규화 효과가 있습니다.
+      - ReLU와 달리 Mish는 연속적으로 미분이 가능하여 singularity(특이점)를 방지합니다. 
+      - Loss 값이 smoothing 되는 효과가 있습니다.
 
 ### 2. Neck: SPP, PAN
-
+ - SPP (Spatial Pyramid Pooling)
 ### 3. Head: YOLOv3
  
 ## Main contribution
