@@ -15,13 +15,11 @@
 
 <img aligh="center" src="https://user-images.githubusercontent.com/6396598/125764022-a4a43460-0bd9-4f3b-9369-786564a20d2d.png" width="80%" height="80%">
 
-![image](https://user-images.githubusercontent.com/6396598/126260993-fe9a823d-5098-41f3-8a3e-d3d4ce75f39f.png)
-
 ### 1. Backbone: CSPDarknet53
   - CSPDarknet53 = CSPNet + Darknet53 (YOLOv3)
     - CSPNet(Cross Stage Partial Network) [ref: https://arxiv.org/pdf/1911.11929.pdf]
   ![Screen Shot 2021-07-19 at 1 50 54 PM](https://user-images.githubusercontent.com/6396598/126104791-f9e03698-b66f-4c1e-bf0e-7121e70924a6.png)
-
+      - 
   - Bag of Freebies for backbone: CutMix, Mosaic data augmentation, DropBlock, Class label smoothing
   
   - Bag of Specials for backbone: Mish activation, Cross-stage partial connections (CSP), Multi-input weighted residual conncections (MiWRC)
@@ -34,10 +32,18 @@
 
 ### 2. Neck: SPP, PAN
  - SPP (Spatial Pyramid Pooling) 
- - <img aligh="center" src="https://user-images.githubusercontent.com/6396598/126275562-99d17929-b9b3-4d6f-b325-e71b0fa28ac7.png" width="50%" height="50%">
-
-### 3. Head: YOLOv3
+ <img aligh="center" src="https://user-images.githubusercontent.com/6396598/126275562-99d17929-b9b3-4d6f-b325-e71b0fa28ac7.png" width="50%" height="50%">
  
+ - PAN (Path aggregation networks)
+ ![image](https://user-images.githubusercontent.com/6396598/126408594-73abf313-b1ac-4cba-bf39-2523bdb1ca13.png)
+ 
+### 3. Head: YOLOv3
+<img align="center" src = "https://user-images.githubusercontent.com/6396598/126421713-47449367-a2ba-4e43-9a87-83832f5e72f6.png">
+
+### Detailed architecture of YOLOv4
+
+![image](https://user-images.githubusercontent.com/6396598/126284436-c14a80a1-f144-44a3-b2d6-399fdc8eca69.png)
+
 ## Main contribution
 
 ### 1. Utilize SOTA Bag-of-Freebies and Bag-of-Specials methods during detector training
@@ -55,13 +61,17 @@
    - Styletransfer GAN
    - Mosaic: mixes 4 training images <img align="right" src = "https://user-images.githubusercontent.com/6396598/125745632-86f902b8-c129-4cb0-bead-886f7c1129f6.png" width="50%" height="50%">
    - Self adversarial training
+   
  - Objective function of BBox regression
+ <img align="center" src = "https://user-images.githubusercontent.com/6396598/126413489-1523223a-eacc-45cb-a429-a2f1bcf95d09.png" width="50%" height="50%">
+  
    - MSE (Meab Sqared Error)
    - IoU
    - GIoU: Consider the shape and orientation of objects <img align="right" src = "https://user-images.githubusercontent.com/6396598/126089976-7d5c6830-ed6f-418b-9a55-5abea8f4a8df.png" width="50%" height="50%">
    - DIoU: Additionly consider the distance of the center of an object <img align="right" src = "https://user-images.githubusercontent.com/6396598/126091728-9634d2c0-cf42-491c-be03-39e5c1a36989.png" width="50%" height="50%">
    - CIoU: Simultaneously considers the overlapping area, the distance between center points, and the aspect ratio.
- - Regularization
+
+- Regularization
    - DropOut:
    - DropPath: <img align="right" src = "https://user-images.githubusercontent.com/6396598/126093821-689ab269-ceed-4ab6-a6b3-0b8f3899623a.png" width="50%" height="50%">
 
@@ -86,6 +96,11 @@
 1. Influence of BoF and Mish on CSPResNeXt-50 and CSPDarknet-53
 ![image](https://user-images.githubusercontent.com/6396598/126107451-43be69ec-0921-4038-a5ba-d90f83de7ab2.png)
 
+2. Influence of BoF
+![image](https://user-images.githubusercontent.com/6396598/126408403-ed820f0c-a73a-47c5-83eb-63f576050947.png)
+
+3. BoS and Backbone: CSPDarknet53 + PAN + SPP has a best performance
+![image](https://user-images.githubusercontent.com/6396598/126407447-3e2ecb22-2f84-4033-a3d4-6010545578d5.png)
 
 ## reference
 
