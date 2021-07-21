@@ -49,9 +49,10 @@
 **Back of Freebies (only change the training strategy or only  increase the training cost method)**
 <img align="center" src = "https://user-images.githubusercontent.com/6396598/125727259-644d3cbc-3e5f-4748-a298-36664a575d2a.png" width="50%" height="50%">
 
- - Data augmentation
-   ![image](https://user-images.githubusercontent.com/6396598/126432214-ab1b8a5f-92f7-427b-bc44-f642769bf80b.png)
+![image](https://user-images.githubusercontent.com/6396598/126432214-ab1b8a5f-92f7-427b-bc44-f642769bf80b.png)
 
+ - Data augmentation
+   
    - Random erase and CutOut: randomly select the rectangle regions in an image and fill in a random value or zero.
    - MixUp: multiply 2 images and superimpose with differenct coefficient ratios
    - CutMix:cover the cropped image to rectangle region of other images
@@ -59,19 +60,18 @@
    - Mosaic: mixes 4 training images 
    - Self adversarial training
    
- - Objective function of BBox regression
- <img align="center" src = "https://user-images.githubusercontent.com/6396598/126413489-1523223a-eacc-45cb-a429-a2f1bcf95d09.png" width="80%" height="80%">
-  
+<img align="center" src = "https://user-images.githubusercontent.com/6396598/126437842-b6320923-80df-465f-b8da-9afca00d29c3.png" width="80%" height="80%">
+
+ - Objective function of BBox regression [ref](https://melona94.tistory.com/3)
    - MSE (Meab Sqared Error)
    - IoU
    - GIoU: Consider the shape and orientation of objects
    - DIoU: Additionly consider the distance of the center of an object 
    - CIoU: Simultaneously considers the overlapping area, the distance between center points, and the aspect ratio.
-
-- Regularization
-
+ 
  ![image](https://user-images.githubusercontent.com/6396598/126436012-bea2b007-9f5e-436e-a498-b543965a8ea5.png)
 
+ - Regularization
    - DropOut:
    - DropPath [ref](https://openreview.net/pdf?id=S1VaB4cex)
    - Spatial DropOut [ref](https://arxiv.org/pdf/1411.4280.pdf)
@@ -82,8 +82,8 @@
 
 <img align="center" src = "https://user-images.githubusercontent.com/6396598/125727338-2399db94-db02-41e5-8f28-8bc022220224.png" width="80%" height="80%">
 
-- Mish activation:  f(x) = x tanh(softplus(x)) [ref](https://arxiv.org/pdf/1908.08681.pdf) 
-    <img aligh="left" src="https://user-images.githubusercontent.com/6396598/126107984-9458640a-c5fd-4e3a-9991-795f8f58886d.png" width="50%" height="50%">
+- Mish activation:  f(x) = x tanh(softplus(x)) [ref1](https://arxiv.org/pdf/1908.08681.pdf) [ref2] (https://eehoeskrap.tistory.com/440)
+    ![image](https://user-images.githubusercontent.com/6396598/126438998-243b6ae6-30ea-43af-a4bc-8879f9b10bdc.png)
     
       - Mish는 작은 음의 값을 허용하여 더 나온 표현력과 정보 흐름을 돕습니다.
       - Mish는 양의 값에 대해서 제한이 없기 때문에 saturation을 방지합니다. 이는 기울기 소실로 인해 발생하는 학습 지연 문제를 해결합니다.
