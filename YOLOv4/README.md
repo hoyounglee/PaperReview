@@ -92,8 +92,11 @@
       - Loss 값이 smoothing 되는 효과가 있습니다.
       
 ### 2. Modify SOTA methods(CBN, PAN, SAM, etc) and make them to be available sing GPU training
- - CBN (Cross Iteration Batch Normalization)
- 
+ - CBN (Cross Iteration Batch Normalization) [ref1](https://arxiv.org/pdf/2002.05712.pdf) [ref2](https://deep-learning-study.tistory.com/635)
+   - Problem of BachNorm: significantly reduced effectiveness in the case of small mini-batch sizes.
+   - ![image](https://user-images.githubusercontent.com/6396598/126441353-2e1572b9-15f8-485c-870d-800f717576df.png)
+   - ![image](https://user-images.githubusercontent.com/6396598/126441442-68d59de9-284c-4f1b-baea-e809a3af6fea.png)
+   
  - PAN (Path Aggregation Network)
  <img align="center" src = "https://user-images.githubusercontent.com/6396598/125761460-e482de59-e2df-48e0-87c5-21ef7c443ed3.png" width="50%" height="50%">
 
