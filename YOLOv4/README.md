@@ -76,8 +76,10 @@
    - DropPath [ref](https://openreview.net/pdf?id=S1VaB4cex)
    - Spatial DropOut [ref](https://arxiv.org/pdf/1411.4280.pdf)
    - DropBlock  [ref](https://arxiv.org/pdf/1810.12890.pdf)
-
    
+ - Label smoothing
+ ![image](https://user-images.githubusercontent.com/6396598/126445225-ac66547d-6804-47ed-b099-d88c11551bcc.png)
+
 **Bag of specials**
 
 <img align="center" src = "https://user-images.githubusercontent.com/6396598/125727338-2399db94-db02-41e5-8f28-8bc022220224.png" width="80%" height="80%">
@@ -93,6 +95,7 @@
       
 ### 2. Modify SOTA methods(CBN, PAN, SAM, etc) and make them to be available sing GPU training
  - CBN (Cross Iteration Batch Normalization) [ref1](https://arxiv.org/pdf/2002.05712.pdf) [ref2](https://deep-learning-study.tistory.com/635)
+ 
    - Problem of BachNorm: significantly reduced effectiveness in the case of small mini-batch sizes.
    - ![image](https://user-images.githubusercontent.com/6396598/126441353-2e1572b9-15f8-485c-870d-800f717576df.png)
    - ![image](https://user-images.githubusercontent.com/6396598/126441442-68d59de9-284c-4f1b-baea-e809a3af6fea.png)
