@@ -15,6 +15,10 @@
    
 ### Methods
    ![image](https://user-images.githubusercontent.com/32179857/127819464-3696053e-ee57-4c02-bd34-88800c17eaae.png)
+- The main difference is that in Meta Pseudo Labels, the teacher receives feedback of the student's performance on a labeled dataset.
+- below is the original Pseudo Labels(PL) loss function
+   ![image](https://user-images.githubusercontent.com/32179857/127825492-44853ee8-a5e0-48fc-9c3c-7910cc9209b7.png)
+
 
 ### Experiments
 
