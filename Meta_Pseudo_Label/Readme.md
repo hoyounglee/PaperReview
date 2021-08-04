@@ -95,3 +95,14 @@ To confirm this, the authors visualized a few target distributions predicted by 
 <p align="center">
     <img width="500" height="600" src="https://user-images.githubusercontent.com/32179857/127942989-c2e28dee-203b-4f02-84c9-3b8e654a0a69.png">
 </p>
+
+
+### Code
+- refered by https://github.com/kekmodel/MPL-pytorch
+![image](https://user-images.githubusercontent.com/32179857/128143267-1b14f7ba-4d9e-49a7-a4d5-5e90cfac3b48.png)
+
+
+
+### References
+- https://github.com/kekmodel/MPL-pytorch
+- https://medium.com/@nainaakash012/meta-pseudo-labels-6480acb1b68
