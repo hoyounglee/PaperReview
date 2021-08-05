@@ -19,6 +19,14 @@
       and utilizes the prediction to construct the target distribution which can be done in two ways:
       - Hard label : q∗(Y|x) = one-hot (argmax (qξ(y|x))
       - Soft label : q∗(Y|x) = qξ(Y|x)
+
+    - The supervised loss is often the cross-entropy computed on the labeled data.
+      - it typically encourage the model to develop a common sense about images.
+    - On the other hand, unsupervised loss is typically either a self-supervised loss or a label propagation los.
+      - it enforce that the model is invariant against certain transformations of the data such as augmentations, adversarial attacks.
+    - Meta Pseudo Labels never learns directly from labeled data, which helps to avoid overfitting, especially when the data is limited.
+    - The signal that the teacher in MPL receives from the student's performance on labeled data is novel way of using labeled data.
+    
 - Knowledge distillation
     - For each data point x, the predicted distribution of the large model q_large(x) is directly taken as the target distribution, i.e. q∗(Y|x) = q_large(Y|x)
 - Label Smoothing
