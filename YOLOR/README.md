@@ -64,19 +64,29 @@ memory networks
 
 -------------------------------------------
 ### Training
-![image](https://user-images.githubusercontent.com/6396598/128269622-5a1e45ae-7dad-4142-a69a-dac30c5c15bb.png)
+![image](https://user-images.githubusercontent.com/6396598/128272323-ce35c72b-2628-4529-8861-e8432327eb55.png)
 
--------------------------------------------
+-----------------------------------------
 ### Inference
 ![image](https://user-images.githubusercontent.com/6396598/128270841-280e9792-6e92-448d-bdca-7eaffe83ed8f.png)
-
 ## Experiment
 ![image](https://user-images.githubusercontent.com/6396598/128271368-a74ea1cb-054e-4c54-b3ac-034d75d26208.png)
 ### 1. Feature alignment for FPN
 ![image](https://user-images.githubusercontent.com/6396598/128271536-703543c2-a3bc-42a2-9bf3-c6ac7782485c.png)
 ### 2. Prediction refinement for object detection
 ![image](https://user-images.githubusercontent.com/6396598/128271609-15a236d9-b3cb-482e-9ba9-a0af55d4fa9a.png)
-### 3. Implicit modeling with different operator
+### 3. Canoical representation for multi-task
+![image](https://user-images.githubusercontent.com/6396598/128272539-652ab4a6-38c2-4bc5-afe8-26fabfd09a4e.png)
+### 4. Implicit modeling with different operator
+![image](https://user-images.githubusercontent.com/6396598/128272663-1d7c1079-ea4b-4a2c-8e75-31695c423917.png)
+### 5. Modeling implicit knowledge in different ways
+![image](https://user-images.githubusercontent.com/6396598/128273615-ad267517-1171-4432-a359-8e164c875471.png)
+### Analysis of implicit models
+![image](https://user-images.githubusercontent.com/6396598/128273690-09e11ec8-e429-4591-9559-681bbd3a4170.png)
+### Implicit knowledge for object detection
+![image](https://user-images.githubusercontent.com/6396598/128273729-4539db0e-701d-41d3-98f9-99883fd38fe2.png)
+![image](https://user-images.githubusercontent.com/6396598/128273739-5f061de4-aa2c-4e45-8805-81b5a41aad2e.png)
+
 ## Contributions
 1. A unified ntworks that can accomplish various tasks by intergrating implicit knowledge and explicit knowledge
 2. Introducing *Kernel space alignment*, *prediction refinement*, *multi-task learning into the implicit knowledge learning process*
