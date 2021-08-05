@@ -1,5 +1,7 @@
 ## Code Analysis
 - source code from [Official repo.](https://github.com/microsoft/Swin-Transformer)
+![image](https://user-images.githubusercontent.com/32179857/126592554-48628838-7ea4-4e72-9c41-f8e01c8faaf8.png)
+
 
 #### Swin Transformer
 ```python
