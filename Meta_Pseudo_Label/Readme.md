@@ -107,7 +107,15 @@ To confirm this, the authors visualized a few target distributions predicted by 
 
 ### Code
 - refered by https://github.com/kekmodel/MPL-pytorch
+- training process
 ![image](https://user-images.githubusercontent.com/32179857/128143267-1b14f7ba-4d9e-49a7-a4d5-5e90cfac3b48.png)
+
+- model code analysis
+  - loss function
+
+    ![image](https://user-images.githubusercontent.com/32179857/128457360-bbd9d9bd-63fb-483f-bf24-445ec2a57f46.png)
+    ![image](https://user-images.githubusercontent.com/32179857/128457386-f35477c7-9bff-4d84-8bed-1c710bf400e5.png)
+
 
 
 
