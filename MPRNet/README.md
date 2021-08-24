@@ -8,12 +8,21 @@
 
 
 ## Introduction
+<p align="center">
+  <img width="350" height="280" src="https://user-images.githubusercontent.com/32179857/130537416-81ea360d-3a46-4393-ac52-d9d721d42255.png">
+</p>
+
 The authors analyized these days' efforts that have been made to bring the multi-stage design to image deblurring, deraining, etc.
 1. Existing encoder-decoder architecture in multi-stage techniques is effective in encoding broad contextual information, but **unreliable in preserving spatial image details**, and single-scale pipeline is spatially accurate but **semantically less reliable**.
     -> they showed that the combination of two in multi-stage is needed.
 2. Naively passing the output of one stage to the next stage yields **suboptimal results.**
 3. **Providing ground-truth supervision** at each stage for progressive restoration is important.
 4. A mechanism to propagate intermediate features from earlier to later stages is required to preserve contextualized features.
+
+Thus, the authors introduce the main contributions below.
+1. A novel multi-stage approach capable of generating contextually-enriched and spatially accurate outputs.
+2. An effective supervised attention module that takes full advantage of the restored image at every stage.
+3. A strategy to aggregate multi-stage features across stages.
 
 
 ## Related Works
@@ -30,3 +39,6 @@ The authors analyized these days' efforts that have been made to bring the multi
 
 
 ## Multi-Stage Progressive Restoration
+<p align="center">
+  <img width="500" height="500" src="https://user-images.githubusercontent.com/32179857/130538012-4b8870ca-591d-41c6-a676-38322f30b029.png">
+</p>
