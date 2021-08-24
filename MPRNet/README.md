@@ -42,3 +42,30 @@ Thus, the authors introduce the main contributions below.
 <p align="center">
   <img width="500" height="500" src="https://user-images.githubusercontent.com/32179857/130538012-4b8870ca-591d-41c6-a676-38322f30b029.png">
 </p>
+
+- The proposed framework for image restoration, shown in Fig.2, consists of three stages.
+    - The first two stages are based on **encoder-decoder** subnetworks that **learn the broad contextual information** due to large receptive fields
+    - Since image restoration is position-sensitive, the last stage employs a subnetwork that operates on the original input image resolution
+      (This maintains pixel-to-pixel correspondence from the input to output)
+- Incorporated a **supervised attention module** between every two stages.
+    - With the supervision of GT images, the module rescales the feature maps of the previous stage before passing them to the next stage.
+- Although MPRNet stacks multiple stages, each stage has an access to the input image.
+
+~~~
+- The authors adapt multi-patch hierarchy on the input image and split the image into non-overlapping patches
+    - four for stage1, two for stage2, and original image for last stage.
+- Instead of directly predicting a restored image X_s, the model predicts a residual image R_s --> X_s = I + R_s
+~~~
+
+<p align="center">
+  <img width="500" height="400" src="https://user-images.githubusercontent.com/32179857/130543593-465bb10f-ee97-403c-8fa7-e4927104360d.png">
+</p>
+
+#### Complementary Feature Processing 
+
+#### Cross-stage Feature Fusion
+
+#### Supervised Attention Module
+
+
+## Experiments
