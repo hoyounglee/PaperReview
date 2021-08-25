@@ -71,8 +71,13 @@ Thus, the authors introduce the main contributions below.
 ##### Encoder-Decoder subnetwork
 - herein, the authors propose subnetwork which is based on standard U-Net
     1) added channel attention blocks(CAB) to extract features at each scale.
+    <p align="center">
+      <img width="600" height="200" src="https://user-images.githubusercontent.com/32179857/130709251-6d408570-3e52-45ca-ab10-b9dfec90e3f9.png">
+    </p>
+
     2) skip connection in U-Net is also processed with the CAB.
     3) Transposed conv --> bilinear upsampling followed by a conv layer.
+    
 ##### Original Resolution subnetwork
 - to preserve fine details from the input image, the authors introduce ORSNet which does not employ any downsampling operation and generates spatially-enriched high-resolution features.
 
