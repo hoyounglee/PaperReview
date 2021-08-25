@@ -62,6 +62,19 @@ Thus, the authors introduce the main contributions below.
 </p>
 
 #### Complementary Feature Processing 
+- Existing single-stage CNN for image restoration typicall use -> 1)encoder-decoder 2) single-scale feature pipeline
+- encoder-decoder
+    - they are prone to sacrificing spatial details due to the repeated use of downsampling operation.
+- single-scale feature pipeline
+    - they are semantically less robust due to the limited receptive field.
+
+##### Encoder-Decoder subnetwork
+- herein, the authors propose subnetwork which is based on standard U-Net
+    1) added channel attention blocks(CAB) to extract features at each scale.
+    2) skip connection in U-Net is also processed with the CAB.
+    3) Transposed conv --> bilinear upsampling followed by a conv layer.
+##### Original Resolution subnetwork
+- to preserve fine details from the input image, the authors introduce ORSNet which does not employ any downsampling operation and generates spatially-enriched high-resolution features.
 
 #### Cross-stage Feature Fusion
 
