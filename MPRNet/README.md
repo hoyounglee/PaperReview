@@ -117,12 +117,12 @@ Thus, the authors introduce the main contributions below.
 
 2. Deblurring
 <p align="center">
-  <img width="300" height="300" src="https://user-images.githubusercontent.com/32179857/130883847-55a47e53-74a2-49fc-be44-9cf287081053.png">
+  <img width="500" height="500" src="https://user-images.githubusercontent.com/32179857/130883847-55a47e53-74a2-49fc-be44-9cf287081053.png">
 </p>
 
 3. Deblurring on RealBlur Dataset
 <p align="center">
-  <img width="300" height="300" src="https://user-images.githubusercontent.com/32179857/130883912-6f35ad3b-fe4b-4ba9-b477-9245ea3cb9eb.png">
+  <img width="500" height="500" src="https://user-images.githubusercontent.com/32179857/130883912-6f35ad3b-fe4b-4ba9-b477-9245ea3cb9eb.png">
 </p>
 ![image](https://user-images.githubusercontent.com/32179857/130884024-626ff5a5-e7dc-4bc5-9592-adc1d4aa621f.png)
 
