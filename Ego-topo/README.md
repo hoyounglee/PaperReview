@@ -10,5 +10,10 @@ scene understanding is largely about answering the who/where/what questions of r
 ![image](https://user-images.githubusercontent.com/6396598/130902053-cad113a2-e0ad-43f2-af93-863cb9ab1c85.png)
 ![image](https://user-images.githubusercontent.com/6396598/130902431-f3ba12fa-a6fe-44b9-9181-b8c856f936f1.png)
 
+
 ## Overview
-### Scene
+
+![image](https://user-images.githubusercontent.com/6396598/130926088-1718cda0-7ce5-42ae-9235-523b11a39cf4.png)
+
+main purpose of this paper: converts egocentric video into a topological map consisting of activity “zones” and their rough spatial proximity.
+
