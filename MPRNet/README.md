@@ -80,10 +80,62 @@ Thus, the authors introduce the main contributions below.
     
 ##### Original Resolution subnetwork
 - to preserve fine details from the input image, the authors introduce ORSNet which does not employ any downsampling operation and generates spatially-enriched high-resolution features.
+<p align="center">
+  <img width="1000" height="300" src="https://user-images.githubusercontent.com/32179857/130880201-ef7dd976-6d65-45e2-b38e-41261063d994.png">
+</p>
+
 
 #### Cross-stage Feature Fusion
+- CSFF Module between two encoder-decoders.
+- Features from one stage are first refined with 1x1 conv for aggregation
+##### merits
+    1. It makes the network less vulnerable by the information loss due to repeated use of up-down sampling operations in encoder-decoder.
+    2. The multi-scale fetures of one stage help enriching the features of the next stage.
+    3. The network optimization procedure becomes more stable as it eases the flow of information.
 
 #### Supervised Attention Module
+- It provides G.T. supervisory signals useful for the progressive image restoration at each stage.
+- it suppress the less informative features at the current stage and only allow the useful ones to propagate to the next stage.
 
+<p align="center">
+  <img width="600" height="300" src="https://user-images.githubusercontent.com/32179857/130881393-f1a2e385-ffec-4746-b3ec-73fba8e9df51.png">
+</p>
+
+1. SAM takes the incoming feature of the eariler stage and first generates a residual image with 1x1 conv.
+2. The residual image is added to the degraded input image I to obtain the restored image X_s
+3. To predict X_s, the authors provide explicit supervision with the G.T. image
+4. per-pixel attention masks are generated from the image X_s using 1x1 conv followed by the sigmoid.
+5. the attnetion augmented feature representation F_out, produced by SAM, is passed to the next stage for further processing. 
 
 ## Experiments
+1. Deraining
+![image](https://user-images.githubusercontent.com/32179857/130883469-a71773d2-7c27-4a79-a2a8-550182169e09.png)
+* PSNR: Peak Signal-to-Noise ratio
+* SSIM: Structual Simiarity Index
+
+![image](https://user-images.githubusercontent.com/32179857/130883776-b218bd74-50ec-4b8a-ad2b-24c5fba354fc.png)
+
+2. Deblurring
+<p align="center">
+  <img width="300" height="300" src="https://user-images.githubusercontent.com/32179857/130883847-55a47e53-74a2-49fc-be44-9cf287081053.png">
+</p>
+
+3. Deblurring on RealBlur Dataset
+<p align="center">
+  <img width="300" height="300" src="https://user-images.githubusercontent.com/32179857/130883912-6f35ad3b-fe4b-4ba9-b477-9245ea3cb9eb.png">
+</p>
+![image](https://user-images.githubusercontent.com/32179857/130884024-626ff5a5-e7dc-4bc5-9592-adc1d4aa621f.png)
+
+
+4. Denoising
+![image](https://user-images.githubusercontent.com/32179857/130884089-fb3c4377-4857-4122-98f6-bfcd6683a07a.png)
+
+
+
+### References
+- https://github.com/swz30/MPRNet
+- https://arxiv.org/pdf/2102.02808v2.pdf
+
+
+
+
