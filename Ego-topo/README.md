@@ -17,3 +17,14 @@ scene understanding is largely about answering the who/where/what questions of r
 
 main purpose of this paper: converts egocentric video into a topological map consisting of activity “zones” and their rough spatial proximity.
 
+"Given an egocentric video, we build a topological map of the environment that reveals activity-centric zones and the sequence in which they are visited."
+
+## Main idea
+### Discovering Activity-Centric Zones
+1. Localization network
+![image](https://user-images.githubusercontent.com/6396598/131055736-77f00d54-2b08-4338-82c6-44b3976746f3.png)
+1. Two training frames are similar if 
+
+  (1) they are near in time (separated by fewer than 15 frames) or from the same action clip, **or**
+  (2) there are at least 10 inlier keypoints consistent with their estimated homography.
+
