@@ -25,8 +25,8 @@ main purpose of this paper: converts egocentric video into a topological map con
 3. We further link zones based on their function across video instances to create consolidated maps.
 4. Finally, we leverage the resulting graphs to uncover environment affordances and anticipate future actions in long videos.
 
-### Discovering Activity-Centric Zones
-1. Localization network
+### 1. Discovering Activity-Centric Zones
+Localization network
 ![image](https://user-images.githubusercontent.com/6396598/131055736-77f00d54-2b08-4338-82c6-44b3976746f3.png)
 
 Two training frames are similar if 
@@ -34,3 +34,6 @@ Two training frames are similar if
   (1) they are near in time (separated by fewer than 15 frames) or from the same action clip, **or**
   (2) there are at least 10 inlier keypoints consistent with their estimated homography.
 
+### 2. Creating the Topological Affordance Grap
+
+![image](https://user-images.githubusercontent.com/6396598/131096686-9cabbefd-0c8f-40c6-acec-8ecaed082d7a.png)
