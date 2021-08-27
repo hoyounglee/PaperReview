@@ -61,6 +61,8 @@ Thus, the authors introduce the main contributions below.
   <img width="500" height="400" src="https://user-images.githubusercontent.com/32179857/130543593-465bb10f-ee97-403c-8fa7-e4927104360d.png">
 </p>
 
+- charbonnier loss, Laplacian operator, lambda=0.05
+
 #### Complementary Feature Processing 
 - Existing single-stage CNN for image restoration typicall use -> 1)encoder-decoder 2) single-scale feature pipeline
 - encoder-decoder
