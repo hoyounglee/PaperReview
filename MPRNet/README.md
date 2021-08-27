@@ -104,7 +104,7 @@ Thus, the authors introduce the main contributions below.
 </p>
 
 1. SAM takes the incoming feature of the eariler stage and first generates a residual image with 1x1 conv.
-2. The residual image is added to the degraded input image I to obtain the restored image X_s
+2. **The residual image is added to the degraded input image I to obtain the restored image X_s**
 3. To predict X_s, the authors provide explicit supervision with the G.T. image
 4. per-pixel attention masks are generated from the image X_s using 1x1 conv followed by the sigmoid.
 5. the attnetion augmented feature representation F_out, produced by SAM, is passed to the next stage for further processing. 
