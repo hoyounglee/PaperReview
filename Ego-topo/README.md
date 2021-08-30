@@ -48,3 +48,9 @@ Super-Point keypoint descriptor
 ### 2. Creating the Topological Affordance Grap
 
 ![image](https://user-images.githubusercontent.com/6396598/131293402-0184bec8-96cf-4925-969a-4cf5b8ce86e3.png)
+
+### 3. Inferring Environment Affordances
+
+### 4. Anticipating Future Actions in Long Video
+
+## Experiments
