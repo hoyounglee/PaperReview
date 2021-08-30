@@ -41,6 +41,8 @@ Proposed:
 Localization network
 ![image](https://user-images.githubusercontent.com/6396598/131055736-77f00d54-2b08-4338-82c6-44b3976746f3.png)
 
+Super-Point keypoint descriptor
+![image](https://user-images.githubusercontent.com/6396598/131315641-5e18fc1f-3dca-4d69-8304-c762d04d38c7.png)
 
 
 ### 2. Creating the Topological Affordance Grap
