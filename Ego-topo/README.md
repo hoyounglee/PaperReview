@@ -25,29 +25,30 @@ In this paper: Scene understanding for **ego-centric video**.
 
 ### 1. Discovering Activity-Centric Zones
 Problems of conventional method to discover zones
-1. Visual feature based:
-2. SLAM localization based:
+1. Visual feature based: Manipulated obbjects often feature prominently in ego-video. (Makeing the features sensitive to the set of objects present).
+2. SLAM localization based: often unrelialble due to quick motions characteristic of egocentric video.
 
 Proposed:
-1. Sample pairs of frames from videos that are segmented into a series of action clips.
-  - Two training frames are similar if 
-  
-  (1) they are near in time (separated by fewer than 15 frames) or from the same action clip, 
-  
-  **or**
-  
-  (2) there are at least 10 inlier keypoints consistent with their estimated homography.
-2. 
-Localization network
 ![image](https://user-images.githubusercontent.com/6396598/131055736-77f00d54-2b08-4338-82c6-44b3976746f3.png)
 
-Super-Point keypoint descriptor
+1. Sample pairs of frames from videos that are segmented into a series of action clips.
+  
+  - Assumption: Two training frames are similar if (1) they are near in time (separated by fewer than 15 frames) or from the same action clip, **or** (2) there are at least 10 inlier keypoints consistent with their estimated homography.
+  - for (1), Siamese network wit a ResNet-18 backbone, followed by a 5 layer MLP.
+  - for (2) Superpoint descriptor[[ref](http://www.cv-learn.com/20201227-cvpr2020-slam-malisiewicz)]
 ![image](https://user-images.githubusercontent.com/6396598/131315641-5e18fc1f-3dca-4d69-8304-c762d04d38c7.png)
-
+![image](https://user-images.githubusercontent.com/6396598/131453514-46cf82ad-3e68-4540-ba90-194a64a7197c.png)
 
 ### 2. Creating the Topological Affordance Grap
-
+- per-video
 ![image](https://user-images.githubusercontent.com/6396598/131293402-0184bec8-96cf-4925-969a-4cf5b8ce86e3.png)
+
+- cross-video
+
+ For each node <img src="https://render.githubusercontent.com/render/math?math=n_{i}">, they utilize a pretrained action/object classifier and compute a ***node-level functional similarity score***.
+ 
+ <img src="https://user-images.githubusercontent.com/6396598/131455516-be7dd234-2e1f-4a31-ab87-a8cb6b304fd2.png" width="30%" height="30%" align="center">
+ <img src="https://user-images.githubusercontent.com/6396598/131456358-c846fcd0-882a-4d95-91b4-4f60b99a1e09.png" width="80%" height="80%" align="center">
 
 ### 3. Inferring Environment Affordances
 
