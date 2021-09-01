@@ -39,8 +39,10 @@ Proposed:
  ![image](https://user-images.githubusercontent.com/6396598/131592563-4e927125-4539-4142-a29a-ed3150b927bf.png)
 
 ### 2. Creating the Topological Affordance Grap
-- per-video
-![image](https://user-images.githubusercontent.com/6396598/131293402-0184bec8-96cf-4925-969a-4cf5b8ce86e3.png)
+
+- per-video 
+
+![image](https://user-images.githubusercontent.com/6396598/131617449-4ef69343-72f6-4336-ac50-7337c6325dea.png)
 
 - cross-video
 
