@@ -16,6 +16,7 @@ In this paper: Scene understanding for **ego-centric video**.
  - converts egocentric video into a topological map consisting of activity “zones” and their rough spatial proximity.
 ![image](https://user-images.githubusercontent.com/6396598/130926088-1718cda0-7ce5-42ae-9235-523b11a39cf4.png)
 
+***What they want to do? make a zone-affortance graph and utilize it for anticipating future actions***
 
 ## Main idea
 1. train a **zone localization network** to discover commonly visited spaces from egocentric video.
@@ -36,8 +37,8 @@ Proposed:
   - Assumption: Two training frames are similar if (1) they are near in time (separated by fewer than 15 frames) or from the same action clip, **or** (2) there are at least 10 inlier keypoints consistent with their estimated homography.
   - for (1), Siamese network wit a ResNet-18 backbone, followed by a 5 layer MLP.
   - for (2) Superpoint descriptor[[ref](http://www.cv-learn.com/20201227-cvpr2020-slam-malisiewicz)]
-![image](https://user-images.githubusercontent.com/6396598/131315641-5e18fc1f-3dca-4d69-8304-c762d04d38c7.png)
-![image](https://user-images.githubusercontent.com/6396598/131453514-46cf82ad-3e68-4540-ba90-194a64a7197c.png)
+  
+ ![image](https://user-images.githubusercontent.com/6396598/131592563-4e927125-4539-4142-a29a-ed3150b927bf.png)
 
 ### 2. Creating the Topological Affordance Grap
 - per-video
@@ -47,11 +48,18 @@ Proposed:
 
  For each node <img src="https://render.githubusercontent.com/render/math?math=n_{i}">, they utilize a pretrained action/object classifier and compute a ***node-level functional similarity score***.
  
- <img src="https://user-images.githubusercontent.com/6396598/131455516-be7dd234-2e1f-4a31-ab87-a8cb6b304fd2.png" width="30%" height="30%" align="center">
- <img src="https://user-images.githubusercontent.com/6396598/131456358-c846fcd0-882a-4d95-91b4-4f60b99a1e09.png" width="80%" height="80%" align="center">
+ <img src="https://user-images.githubusercontent.com/6396598/131455516-be7dd234-2e1f-4a31-ab87-a8cb6b304fd2.png" width="50%" height="50%" align="center">
+ <img src="https://user-images.githubusercontent.com/6396598/131456358-c846fcd0-882a-4d95-91b4-4f60b99a1e09.png" width="50%" height="50%" align="center">
 
 ### 3. Inferring Environment Affordances
+- They utilize the topological graph to predict a zone's affordances -- all likely interactions possible at that zone.
+- Learning scene affordances is especially important when **an agent must use a previously unseen environment to perform a task.**
+- However, since each clip of an ego-video shows a zone being used only for a single interaction, **it falls short of capturing all likely interactions at that location**.
+![image](https://user-images.githubusercontent.com/6396598/131596096-7902cc17-6a00-49df-9fb7-38e2d531b60b.png)
 
 ### 4. Anticipating Future Actions in Long Video
+ - In the anticipation task, they see a fraction of a long video (e.g., the first 25%), and from that we must predict what actions will be done in the future.
+ - For long range anticipation, models need to understand how much progress has been made on the composite activity so far, and anticipate what actions need to be done in the future to complete it. For this, ***a structured representation of all past activity and affordances is essential***.
+ ![image](https://user-images.githubusercontent.com/6396598/131610157-c23aadce-3cc6-4186-b340-970994e66ccc.png)
 
 ## Experiments
