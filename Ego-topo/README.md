@@ -63,3 +63,11 @@ Proposed:
  ![image](https://user-images.githubusercontent.com/6396598/131610157-c23aadce-3cc6-4186-b340-970994e66ccc.png)
 
 ## Experiments
+### 1. dataset
+- EGTEA Gaze+: 32subjects folling 7 recipes in a single kitchen. 53 objects and 19 actions.
+- EPIC_Kitchens: 352 objects and 125 actions.
+
+### 2. EGO-TOPO for Environment Affordances
+![image](https://user-images.githubusercontent.com/6396598/131612264-07059136-a561-4faf-8c9a-60c144b462f1.png)
+
+### 3. EGO-TOPO for Long Term Action Anticipation
