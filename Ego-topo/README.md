@@ -49,7 +49,7 @@ Proposed:
  For each node <img src="https://render.githubusercontent.com/render/math?math=n_{i}">, they utilize a pretrained action/object classifier and compute a ***node-level functional similarity score***.
  
  <img src="https://user-images.githubusercontent.com/6396598/131455516-be7dd234-2e1f-4a31-ab87-a8cb6b304fd2.png" width="50%" height="50%" align="center">
- <img src="https://user-images.githubusercontent.com/6396598/131456358-c846fcd0-882a-4d95-91b4-4f60b99a1e09.png" width="50%" height="50%" align="center">
+ <img src="https://user-images.githubusercontent.com/6396598/131456358-c846fcd0-882a-4d95-91b4-4f60b99a1e09.png" width="80%" height="80%" align="center">
 
 ### 3. Inferring Environment Affordances
 - They utilize the topological graph to predict a zone's affordances -- all likely interactions possible at that zone.
