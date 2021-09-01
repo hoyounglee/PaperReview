@@ -10,13 +10,11 @@
 
 ## Overview
 
-In this paper: Scene understanding for **ego-centric video**.
+In this paper: Scene understanding for **ego-centric video** --> ***make a zone-affortance graph and utilize it for anticipating future actions***
  - scene understanding is largely about answering the who/where/what questions of recognition: what objects are present? is it an indoor/outdoor scene? where is the person and what are they doing?
  - "Given an egocentric video, we build a topological map of the environment that reveals activity-centric zones and the sequence in which they are visited."
  - converts egocentric video into a topological map consisting of activity “zones” and their rough spatial proximity.
 ![image](https://user-images.githubusercontent.com/6396598/130926088-1718cda0-7ce5-42ae-9235-523b11a39cf4.png)
-
-***What they want to do? make a zone-affortance graph and utilize it for anticipating future actions***
 
 ## Main idea
 1. train a **zone localization network** to discover commonly visited spaces from egocentric video.
