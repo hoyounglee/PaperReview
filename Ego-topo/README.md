@@ -71,3 +71,4 @@ Proposed:
 ![image](https://user-images.githubusercontent.com/6396598/131612264-07059136-a561-4faf-8c9a-60c144b462f1.png)
 
 ### 3. EGO-TOPO for Long Term Action Anticipation
+![image](https://user-images.githubusercontent.com/6396598/131612640-56326de0-a782-4506-9a2b-d2b0da4e2bb8.png)
