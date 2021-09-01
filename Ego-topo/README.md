@@ -42,7 +42,7 @@ Proposed:
 
 - per-video 
 
-![image](https://user-images.githubusercontent.com/6396598/131617449-4ef69343-72f6-4336-ac50-7337c6325dea.png)
+![image](https://user-images.githubusercontent.com/6396598/131618530-273ee7a3-5811-4079-97a3-6123bd9300aa.png)
 
 - cross-video
 
