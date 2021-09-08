@@ -76,11 +76,9 @@ T = Temporal length = 4
 
 ### Transformations in the lateral connections:   
 >(i) Time-to-channel: We reshape and transpose {αT, S^2, βC} into {T , S^2, αβC}, meaning that we pack all α frames into the channels of one frame.   
-<br/>
 >(ii) Time-strided sampling: We simply sample one out of every α frames, so {αT , S^2, βC} becomes {T , S^2, βC}.  
-<br/> 
 >(iii) Time-strided convolution: We perform a 3D convolution of a 5×12 kernel with 2βC output channels and stride = α.
-The output of the lateral connections is fused into the Slow pathway by summation or concatenation.
+>The output of the lateral connections is fused into the Slow pathway by summation or concatenation.
 
 <br/>
 
