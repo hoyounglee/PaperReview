@@ -18,4 +18,4 @@
     - DRANet
 
 5. NLP
-    -BERT
+    - BERT
