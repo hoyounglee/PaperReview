@@ -48,6 +48,10 @@ e = self.tok_embed(x) + self.pos_embed(pos) + self.seg_embed(seg)
 - Scaled Dot-Product attention gets Q, K, V as inputs. these are the placeholder for the inputs, 1) results of fully-connection of embedding, 2) previous block's results (like RNN) 
 - Transformer deals Q as decoder's hidden state, K as encoder's hidden, and V as normalized weights given attention to K.
 - BERT does not use decoder and Q=K=V. --> So it becomes 'Self-Attention'.
-- 
+- Q, K, V?
+
+    ![image](https://user-images.githubusercontent.com/32179857/133197432-68fe943a-dcfe-4848-855c-8a291b018582.png)
+
+
 
 
