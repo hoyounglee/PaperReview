@@ -27,5 +27,6 @@
 
 Etc.
     - Convolutions
+    
     - Normalizations
     
