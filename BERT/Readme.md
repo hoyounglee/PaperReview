@@ -120,7 +120,7 @@ array([[0.0546998 ],
   
   ![image](https://user-images.githubusercontent.com/32179857/133370232-24cb6fd6-e65d-4551-aded-6c7b4ae90ad8.png)
 
-##### example
+### example
   ![bert](https://user-images.githubusercontent.com/32179857/133370604-beef53de-d11d-4b54-ac54-deeae9d7c0a8.gif)
 
   
