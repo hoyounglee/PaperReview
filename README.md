@@ -23,9 +23,9 @@
 6. Action recognition
     - Slow-Fast
 
-
-
 x. Etc
     - Convolutions
     - Normalizations
+
+
     
