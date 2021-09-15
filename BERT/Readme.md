@@ -103,8 +103,26 @@ array([[0.0546998 ],
 - pooling_layer=-1 => close layer to output
 - pooling_layer=-12 => close layer to input
 - here, pooling_layer=-12 looked the best as a word embedding
+  
   ![image](https://user-images.githubusercontent.com/32179857/133369873-c404b151-5cd6-41bf-be7c-ddd6ae156ff2.png)
 
 #### Named Entity Recognition (NER)
 - here, the authors tested feature concatenation, and found that concat does not have remarkable difference.
   ![image](https://user-images.githubusercontent.com/32179857/133369946-c990bd1a-a04c-44f5-9cae-5f99712b0ed2.png)
+
+  
+## Performance
+  #### 1. GLUE
+  
+  ![image](https://user-images.githubusercontent.com/32179857/133370201-72d27b2f-7a70-4611-9dcb-4d10c20cd6b5.png)
+ 
+  #### 2. SQuAD v1.1
+  
+  ![image](https://user-images.githubusercontent.com/32179857/133370232-24cb6fd6-e65d-4551-aded-6c7b4ae90ad8.png)
+
+##### example
+  ![bert](https://user-images.githubusercontent.com/32179857/133370604-beef53de-d11d-4b54-ac54-deeae9d7c0a8.gif)
+
+  
+  ![image](https://user-images.githubusercontent.com/32179857/133370469-4f26fb7c-351d-4380-9748-cd69bd446a90.png)
+
