@@ -126,3 +126,8 @@ array([[0.0546998 ],
   
   ![image](https://user-images.githubusercontent.com/32179857/133370469-4f26fb7c-351d-4380-9748-cd69bd446a90.png)
 
+
+## References
+- https://docs.likejazz.com/bert/#fn:fn-12
+- https://hwiyong.tistory.com/392
+- https://ebbnflow.tistory.com/151
