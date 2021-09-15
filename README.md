@@ -19,3 +19,11 @@
 
 5. NLP
     - BERT
+
+6. Action recognition
+    - Slow-Fast
+
+
+
+Etc.
+    
