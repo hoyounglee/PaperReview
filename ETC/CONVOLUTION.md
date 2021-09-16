@@ -25,6 +25,11 @@
 
 ## Transposed convolution
 ![conv3](https://user-images.githubusercontent.com/6396598/133370834-15d11349-64f0-414f-b5c9-8c2b626aaee5.gif) ![conv4](https://user-images.githubusercontent.com/6396598/133370851-8b320875-9ca2-497e-82fe-ddd5101b404f.gif)
+1. 2d convolution operation
+![image](https://user-images.githubusercontent.com/6396598/133535658-5275fdf1-67f3-4f63-ab95-85d806645eef.png)
+
+2. Transpose convolution operation
+![image](https://user-images.githubusercontent.com/6396598/133535673-a6ecfe1a-0c43-4389-93b8-9987ae8da8f6.png)
 
 ## Seperable convolution
 ![image](https://user-images.githubusercontent.com/6396598/133370928-ea0dde31-b4cd-4d11-b99c-d10f59139239.png)
