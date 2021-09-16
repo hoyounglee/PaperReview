@@ -3,6 +3,8 @@
 ![conv1](https://user-images.githubusercontent.com/6396598/133370621-817d9a60-130d-4d5d-8bb2-696b742bb6d9.gif)
 
 ### how to colculate? 
+
+![image](https://user-images.githubusercontent.com/6396598/133527409-eb1be1ea-547d-4fcc-9f83-51a4647a50d1.png)
 ```
 1. input size: 
   - width: W1 = 5
@@ -18,7 +20,13 @@
   - height: H2=(H1−F+2P)/S+1 = (5 - 3 + 2)/2 + 1 = 3
   - Dimension: D2 = K = 2
 ```
-![image](https://user-images.githubusercontent.com/6396598/133527409-eb1be1ea-547d-4fcc-9f83-51a4647a50d1.png)
+**Number of parameters**
+
+D1 x F x F x K
+
+**Computational complexity**
+
+D1 x F x F x K x W1 x H1 
 
 ## Dilated convolution
 ![conv2](https://user-images.githubusercontent.com/6396598/133370681-96be04ad-a4c5-40aa-95d0-e5edda282951.gif)
