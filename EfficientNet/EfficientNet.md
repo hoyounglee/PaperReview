@@ -4,12 +4,8 @@
 
 ## 1. Abstract
 ---
-<<<<<<< HEAD
----
-=======
->>>>>>> ceced4225b839c82d250119ad0ecef503f8ae11f
 
- In this paper, we systematically study model scaling and identify that
+In this paper, we systematically study model scaling and identify that
 carefully balancing network depth, width, and resolution can lead to better performance.   
 Based
 on this observation, we propose a new scaling
@@ -26,11 +22,7 @@ called EfficientNets.
 
 ## 2. Introduction
 ---
-<<<<<<< HEAD
----
-=======
 
->>>>>>> ceced4225b839c82d250119ad0ecef503f8ae11f
 In previous work, it is common to scale
 only one of the three dimensions – depth, width, and image
 size.   
@@ -46,11 +38,7 @@ Unlike conventional practice that arbitrary scales these factors, our method uni
 
 ## 3. Compound Model Scaling
 ---
-<<<<<<< HEAD
----
-=======
 
->>>>>>> ceced4225b839c82d250119ad0ecef503f8ae11f
 ### 3.1 Problem Formulation
 Define a ConvNet as:   
 
@@ -106,10 +94,6 @@ increase by 2^φ.
 
 ## 4. EfficientNet Architecture
 ---
-<<<<<<< HEAD
----
-=======
->>>>>>> ceced4225b839c82d250119ad0ecef503f8ae11f
 
 Since model scaling does not change layer in baseline network, having a good baseline network is also critical.   
 We develop our baseline network by leveraging a multi-objective neural architecture search that optimizes both accuracy and FLOPS.
@@ -137,11 +121,7 @@ obtain EfficientNet-B1 to B7 (Details in Table 2).
 
 ## 5. Experiments
 ---
-<<<<<<< HEAD
----
-=======
 
->>>>>>> ceced4225b839c82d250119ad0ecef503f8ae11f
 In order to further understand why our compound scaling
 method is better than others, Figure 7 compares the class
 activation map (Zhou et al., 2016) for a few representative
@@ -159,11 +139,7 @@ models with different scaling methods.
 
 ## 6. Discussion
 ---
-<<<<<<< HEAD
----
-=======
 
->>>>>>> ceced4225b839c82d250119ad0ecef503f8ae11f
 ![fig 7](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbbzAgY%2Fbtq2cnGdl5S%2FsKsE9bHxtEZyEokKE04QX1%2Fimg.jpg)
 
 As shown in the figure, the model with compound scaling tends to focus on more relevant regions with more object details, while other models are either lack of object details or unable to capture all objects in the images.
@@ -173,10 +149,6 @@ As shown in the figure, the model with compound scaling tends to focus on more r
 
 ## 7. Conclusion
 ---
-<<<<<<< HEAD
----
-We propose a simple and highly effective compound scaling method, which enables us to easily scale up a baseline ConvNet to any target resource constraints in a more principled way, while maintaining model efficiency.
-=======
 
 We propose a simple and highly effective compound scaling method, which enables us to easily scale up a baseline ConvNet to any target resource constraints in a more principled way, while maintaining model efficiency.
->>>>>>> ceced4225b839c82d250119ad0ecef503f8ae11f
+
