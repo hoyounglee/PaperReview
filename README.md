@@ -17,3 +17,15 @@
 4. Domain Adaptation
     - DRANet
 
+5. NLP
+    - BERT
+
+6. Action recognition
+    - Slow-Fast
+
+x. Etc
+    - Convolutions
+    - Normalizations
+
+
+    
