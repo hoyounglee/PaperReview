@@ -51,7 +51,7 @@ memory networks
 **2. Unified networks**
 ![image](https://user-images.githubusercontent.com/6396598/128151354-7dcbdbde-d8d0-437b-9590-cb69d4418557.png)
 
- ![image](https://user-images.githubusercontent.com/6396598/128154517-9f3f918b-6291-4236-bcc4-28844a9ad3cd.png)
+![image](https://user-images.githubusercontent.com/6396598/128154517-9f3f918b-6291-4236-bcc4-28844a9ad3cd.png)
  
  ### Modeling implicit knowledge
  ![image](https://user-images.githubusercontent.com/6396598/128267666-738ee006-ef35-4498-9f64-c5a08be0415a.png)
@@ -61,7 +61,44 @@ memory networks
  **2. Neural Network: <a href="https://www.codecogs.com/eqnedit.php?latex=Wz" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Wz" title="Wz" /></a> Use vector <a href="https://www.codecogs.com/eqnedit.php?latex=z" target="_blank"><img src="https://latex.codecogs.com/gif.latex?z" title="z" /></a> as the prior of implicit knowledge, the use the weight matrix <a href="https://www.codecogs.com/eqnedit.php?latex=W" target="_blank"><img src="https://latex.codecogs.com/gif.latex?W" title="W" /></a>**
  
  **3. Matrix Factorization: <img src="https://latex.codecogs.com/gif.latex?Z^{T}c" title="Z^{T}c" />**
+### Implementation
+**1. Implicit_add**
+```
+class ImplicitA(nn.Module):
+    def __init__(self, channel):
+        super(ImplicitA, self).__init__()
+        self.channel = channel
+        self.implicit = nn.Parameter(torch.zeros(1, channel, 1, 1))
+        nn.init.normal_(self.implicit, std=.02)
 
+    def forward(self):
+        return self.implicit
+```
+**2. Implicit_mul**
+```
+class ImplicitM(nn.Module):
+    def __init__(self, channel):
+        super(ImplicitM, self).__init__()
+        self.channel = channel
+        self.implicit = nn.Parameter(torch.ones(1, channel, 1, 1))
+        nn.init.normal_(self.implicit, mean=1., std=.02)
+
+    def forward(self):
+        return self.implicit
+```
+
+**3. Implicit_concat**
+```
+class ImplicitC(nn.Module):
+    def __init__(self, channel):
+        super(ImplicitC, self).__init__()
+        self.channel = channel
+        self.implicit = nn.Parameter(torch.zeros(1, channel, 1, 1))
+        nn.init.normal_(self.implicit, std=.02)
+
+    def forward(self):
+        return self.implicit
+```
 -------------------------------------------
 ### Training
 ![image](https://user-images.githubusercontent.com/6396598/128272323-ce35c72b-2628-4529-8861-e8432327eb55.png)
@@ -70,7 +107,7 @@ memory networks
 ### Inference
 ![image](https://user-images.githubusercontent.com/6396598/128270841-280e9792-6e92-448d-bdca-7eaffe83ed8f.png)
 ## Experiment
-![image](https://user-images.githubusercontent.com/6396598/128271368-a74ea1cb-054e-4c54-b3ac-034d75d26208.png)
+![image](https://user-images.githubusercontent.com/6396598/128281845-c1bf32d5-68fe-4b42-8628-8dda5eb6b8d4.png)
 ### 1. Feature alignment for FPN
 ![image](https://user-images.githubusercontent.com/6396598/128271536-703543c2-a3bc-42a2-9bf3-c6ac7782485c.png)
 ### 2. Prediction refinement for object detection
@@ -85,7 +122,7 @@ memory networks
 ![image](https://user-images.githubusercontent.com/6396598/128273690-09e11ec8-e429-4591-9559-681bbd3a4170.png)
 ### Implicit knowledge for object detection
 ![image](https://user-images.githubusercontent.com/6396598/128273729-4539db0e-701d-41d3-98f9-99883fd38fe2.png)
-![image](https://user-images.githubusercontent.com/6396598/128273739-5f061de4-aa2c-4e45-8805-81b5a41aad2e.png)
+![image](https://user-images.githubusercontent.com/6396598/128282117-718a0e8a-72df-4ca3-8f25-806f01cdab50.png)
 
 ## Contributions
 1. A unified ntworks that can accomplish various tasks by intergrating implicit knowledge and explicit knowledge
