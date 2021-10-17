@@ -125,7 +125,7 @@ classifier.add(Dense(units = 2, activation = 'softmax'))
 
     - Intermediate Layer outputs
  
-    <img src="https://user-images.githubusercontent.com/32179857/137632288-34fa1817-2fe7-4546-91b7-6094e3671631.png" width="650" height="250" />
+    <img src="https://user-images.githubusercontent.com/32179857/137632288-34fa1817-2fe7-4546-91b7-6094e3671631.png" width="950" height="750" />
 
 - Why Scaling improves the training performance?
 > 1. Treat all images in the same manner:
@@ -139,6 +139,7 @@ classifier.add(Dense(units = 2, activation = 'softmax'))
     - training epoch : 10
     - input dimension: 180
     - image scaling  : [0, 1] scaling
+    <img src="https://user-images.githubusercontent.com/32179857/137632675-734f0e23-518f-4879-814c-ba86e5005117.png" width="650" height="350" />
 
     #### 1. RMSProp
     - Training flow
@@ -150,6 +151,59 @@ classifier.add(Dense(units = 2, activation = 'softmax'))
     <img src="https://user-images.githubusercontent.com/32179857/137629942-c3019a83-feb6-4610-8172-2729fce8b9ff.png" width="950" height="750" />
     
     #### 2. SGD
+    - Training flow
+
+    <img src="https://user-images.githubusercontent.com/32179857/137632550-e7185a95-022a-4747-93ee-a3dd585a83f7.png" width="650" height="250" />
+
+    - Intermediaite Layer outputs
     
-    
+    <img src="https://user-images.githubusercontent.com/32179857/137632563-f18e055a-00ec-4d20-9c48-49535679c0fe.png" width="950" height="750" />
+
     #### 4. Adam
+    - Training flow
+
+    <img src="https://user-images.githubusercontent.com/32179857/137634458-111347fd-fae9-44f2-a9da-63273fcc13e2.png" width="650" height="250" />
+
+    - Intermediaite Layer outputs
+    
+    <img src="https://user-images.githubusercontent.com/32179857/137634538-c2c4dce5-c7b6-4995-804d-13b4465440e0.png" width="950" height="750" />
+   
+
+### Normalization
+- default hypyer parameter / configurations
+    - Batch size.    : 32
+    - training epoch : 10
+    - input dimension: 180
+    - image scaling  : [0, 1] scaling
+    - optimizer      : RMSProp
+
+    #### 1. No normalization
+    - Training flow
+
+    <img src="https://user-images.githubusercontent.com/32179857/137629971-045c6f27-4e6d-4922-9406-8a4548623adf.png" width="650" height="250" />
+
+    - Intermediaite Layer outputs
+    
+    <img src="https://user-images.githubusercontent.com/32179857/137629942-c3019a83-feb6-4610-8172-2729fce8b9ff.png" width="950" height="750" />
+    
+    #### 2. Batch Norm after activation. (Conv -> ReLU -> Batchnorm)
+    - Training flow
+
+    <img src="https://user-images.githubusercontent.com/32179857/137634921-d41d0600-08b6-442e-80c1-9486c80b08f7.png" width="650" height="250" />
+
+    - Intermediaite Layer outputs
+    
+    <img src="https://user-images.githubusercontent.com/32179857/137634963-ffb0ca73-9662-41ab-ac01-3f9aa9f544ba.png" width="950" height="750" />
+
+    
+    #### 3. Batch Norm before activation. (Conv -> Batchnorm -> ReLU)
+    - Training flow
+
+    <img src="https://user-images.githubusercontent.com/32179857/137635788-9c93e6ae-0452-4f4b-9fff-b326dc1b79d7.png" width="650" height="250" />
+
+    - Intermediaite Layer outputs
+    
+    <img src="https://user-images.githubusercontent.com/32179857/137635810-bec44422-0eab-4c36-8d02-babcf3eec257.png" width="950" height="750" />
+    
+    
+    
