@@ -57,14 +57,42 @@ classifier.add(Dense(units = 2, activation = 'softmax'))
     - training epoch : 10
     - input dimension: 180
     
-    #### 1. batch size 16
+    #### 1. batch size 8
     - Training flow
-    
-    <img src="https://user-images.githubusercontent.com/32179857/137628260-fb6719eb-a0db-41e2-b31e-d81ef8460f0e.png" width="650" height="250" />
+
+    <img src="https://user-images.githubusercontent.com/32179857/137630169-d9cad118-f8ca-4394-afdd-e79a72b92d9e.png" width="650" height="250" />
     
     - Intermediate Layer outputs 
 
     <img src="https://user-images.githubusercontent.com/32179857/137629144-54d0ebcc-b35c-4192-b80f-48d19d80989a.png" width="950" height="750" />
 
+    #### 2. batch size 32
+    - Training flow
+
+    <img src="https://user-images.githubusercontent.com/32179857/137629971-045c6f27-4e6d-4922-9406-8a4548623adf.png" width="650" height="250" />
+
+    - Intermediaite Layer outputs
+    
+    <img src="https://user-images.githubusercontent.com/32179857/137629942-c3019a83-feb6-4610-8172-2729fce8b9ff.png" width="950" height="750" />
 
 
+### Input dimension
+- default hypyer parameter / configurations
+    - image scaling  : [0, 1] scaling
+    - training epoch : 10
+    - Batch size.   : 32
+
+    #### 1. input dimension 180
+    
+    #### 2. input dimension 90
+    
+### Scaling
+- default hypyer parameter / configurations
+    - Batch size.    : 32
+    - training epoch : 10
+    - input dimension: 180
+
+    #### 1. Scaling [0, 255]
+    
+    #### 2. Scaling [0, 1]
+    
