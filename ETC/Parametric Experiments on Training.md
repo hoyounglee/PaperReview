@@ -83,8 +83,25 @@ classifier.add(Dense(units = 2, activation = 'softmax'))
     - Batch size.   : 32
 
     #### 1. input dimension 180
+    - Training flow
+
+    <img src="https://user-images.githubusercontent.com/32179857/137629971-045c6f27-4e6d-4922-9406-8a4548623adf.png" width="650" height="250" />
+
+    - Intermediaite Layer outputs
     
+    <img src="https://user-images.githubusercontent.com/32179857/137629942-c3019a83-feb6-4610-8172-2729fce8b9ff.png" width="950" height="750" />
+
+
+
     #### 2. input dimension 90
+    - Training flow
+
+    <img src="https://user-images.githubusercontent.com/32179857/137631212-b9fb5ca3-0c73-4fe7-b4f5-b45f3191e79a.png" width="650" height="250" />    
+
+    - Intermediate Layer outputs
+
+    <img src="https://user-images.githubusercontent.com/32179857/137631634-2beaf04c-8c17-4169-bc6e-01b7fa77039c.png" width="950" height="750" />   
+
     
 ### Scaling
 - default hypyer parameter / configurations
@@ -92,7 +109,47 @@ classifier.add(Dense(units = 2, activation = 'softmax'))
     - training epoch : 10
     - input dimension: 180
 
-    #### 1. Scaling [0, 255]
+    #### 1. Scaling [0, 1]
+    - Training flow
+
+    <img src="https://user-images.githubusercontent.com/32179857/137629971-045c6f27-4e6d-4922-9406-8a4548623adf.png" width="650" height="250" />
+
+    - Intermediaite Layer outputs
     
-    #### 2. Scaling [0, 1]
+    <img src="https://user-images.githubusercontent.com/32179857/137629942-c3019a83-feb6-4610-8172-2729fce8b9ff.png" width="950" height="750" />
+
+    #### 2. Scaling [0, 255]
+    - Training flow
+
+    <img src="https://user-images.githubusercontent.com/32179857/137632248-bf0370ab-4102-4204-b969-a193902b74f1.png" width="650" height="250" />
+
+    - Intermediate Layer outputs
+ 
+    <img src="https://user-images.githubusercontent.com/32179857/137632288-34fa1817-2fe7-4546-91b7-6094e3671631.png" width="650" height="250" />
+
+- Why Scaling improves the training performance?
+> 1. Treat all images in the same manner:
+>> some images are high pixel range, some are low pixel range. The images are all sharing the same model, weights and learning rate. The high range image tends to create stronger loss while low range create weak loss, the sum of them will all contribute the back propagation update. But for visual understanding, you care about the contour more than how strong is the contrast as long as the contour is reserved. Scaling every images to the same range [0,1] will make images contributes more evenly to the total loss. In other words, a high pixel range cat image has one vote, a low pixel range cat image has one vote, a high pixel range dog image has one vote, a low pixel range dog image has one vote... this is more like what we expect for training a model for dog/cat image classifier. Without scaling, the high pixel range images will have large amount of votes to determine how to update weights. For example, black/white cat image could be higher pixel range than pure black cat image, but it just doesn't mean black/white cat image is more important for training.
+> 2. Using typical learning rate: 
+>> when we reference learning rate from other's work, we can directly reference to their learning rate if both works do the scaling preprocessing over images data set. Otherwise, higher pixel range image results higher loss and should use smaller learning rate, lower pixel range image will need larger learning rate.
+
+### Optimizer
+- default hypyer parameter / configurations
+    - Batch size.    : 32
+    - training epoch : 10
+    - input dimension: 180
+    - image scaling  : [0, 1] scaling
+
+    #### 1. RMSProp
+    - Training flow
+
+    <img src="https://user-images.githubusercontent.com/32179857/137629971-045c6f27-4e6d-4922-9406-8a4548623adf.png" width="650" height="250" />
+
+    - Intermediaite Layer outputs
     
+    <img src="https://user-images.githubusercontent.com/32179857/137629942-c3019a83-feb6-4610-8172-2729fce8b9ff.png" width="950" height="750" />
+    
+    #### 2. SGD
+    
+    
+    #### 4. Adam
