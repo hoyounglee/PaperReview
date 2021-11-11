@@ -26,21 +26,22 @@ Second, simply stacking convolutional and attention layers, in a proper way, cou
 For convolution, we mainly focus on the MBConv block which employs depthwise convolution to capture the spatial interaction. A key reason of this choice is that both the FFN module
 in Transformer and MBConv employ the design of “inverted bottleneck”, which first expands the channel size of the input by 4x and later project the the 4x-wide hidden state back to the original channel size to enable residual connection. 
 
-![](https://user-images.githubusercontent.com/48341349/141216119-4476844b-17a0-46e5-a2b5-3a77781a00cf.png)
+<img src="https://user-images.githubusercontent.com/48341349/141216119-4476844b-17a0-46e5-a2b5-3a77781a00cf.png" width="500" height="100"/>
+
 
 where xi , yi ∈ R^D are the input and output at position i respectively, and L(i) denotes a local neighborhood of i, e.g., a 3x3 grid centered at i in image processing.
 
 In comparison, self-attention allows the receptive field to be the entire spatial locations and computes
 the weights based on the re-normalized pairwise similarity between the pair (xi, xj):
 
-![](https://user-images.githubusercontent.com/48341349/141216121-307abd5f-6f99-41c5-b458-3ab8a54b20a3.png)
+<img src="https://user-images.githubusercontent.com/48341349/141216121-307abd5f-6f99-41c5-b458-3ab8a54b20a3.png" width="500" height="140"/>
+
 
 A straightforward idea that could achieve this is simply to sum a global static convolution kernel with the adaptive attention matrix, either after or before the Softmax normalization, i.e.
 
-![](https://user-images.githubusercontent.com/48341349/141216116-d533e22d-1ef6-4556-b9fe-1bb22af9337c.png)
+<img src="https://user-images.githubusercontent.com/48341349/141216116-d533e22d-1ef6-4556-b9fe-1bb22af9337c.png" width="750" height="100"/>
 
-![](https://user-images.githubusercontent.com/48341349/141216106-ea00905b-da6e-49c1-b49a-a1d2572239fc.png)
-
+<img src="https://user-images.githubusercontent.com/48341349/141216106-ea00905b-da6e-49c1-b49a-a1d2572239fc.png" width="500" height="140"/>
 
 Given the comparison above, an ideal model should be able to combine the 3 desirable properties in Table 1. With the similar form of depthwise convolution in Eqn. (1) and self-attention in Eqn. (2), a
 straightforward idea that could achieve this is simply to sum a global static convolution kernel with the adaptive attention matrix, either after or before the Softmax normalization, i.e
@@ -78,8 +79,9 @@ S2~S4: either the MBConv or the Transformer block
 </br>
 
 * Generalization capability
-  
-![](https://creamnuts.github.io/assets/images/short_review/coatnet/image-20210824172433335.png)
+ 
+<img src="https://creamnuts.github.io/assets/images/short_review/coatnet/image-20210824172433335.png" width="550" height="300"/>
+
 >C-C-C-C ≈ C-C-C-T ≥ C-C-T-T > C-T-T-T ≫ ViT(REL)
 
 Particularly, VIT(REL) is significantly worse than variants by a large margin, which we conjecture
@@ -89,7 +91,8 @@ is related to the lack of proper low-level information processing in its aggress
 
 * Model Capability
 
-![](https://creamnuts.github.io/assets/images/short_review/coatnet/image-20210824172559116.png)
+<img src="https://creamnuts.github.io/assets/images/short_review/coatnet/image-20210824172559116.png" width="550" height="300"/>
+
 >C-C-T-T ≈ C-T-T-T > ViT(REL) > C-C-C-T > C-C-C-C
 
 Importantly, this suggests that simply having more Transformer blocks does NOT necessarily mean higher capacity for visual processing.    
@@ -100,7 +103,8 @@ limit the model capacity.
 
 Finally, to decide between C-C-T-T and C-T-T-T, we conduct another transferability test.
 
-![](https://creamnuts.github.io/assets/images/short_review/coatnet/image-20210824173716401.png)
+<img src="https://creamnuts.github.io/assets/images/short_review/coatnet/image-20210824173716401.png" width="550" height="140"/>
+
 
 Taking generalization, model capacity, transferability and efficiency into consideration, we adapt the C-C-T-T multi-stage layout for CoAtNet. 
 
@@ -110,11 +114,12 @@ Taking generalization, model capacity, transferability and efficiency into consi
 
 ## 3. Experiments
 
-![](https://user-images.githubusercontent.com/48341349/141215691-9177cd99-e098-45fb-bc19-134c9814f816.jpg)
+<img src="https://user-images.githubusercontent.com/48341349/141215691-9177cd99-e098-45fb-bc19-134c9814f816.jpg" width="700" height="400"/>
 
-![](https://user-images.githubusercontent.com/48341349/141215706-70cbdc4c-e4b8-4e52-8db1-326c0eecffe2.png)
+<img src="https://user-images.githubusercontent.com/48341349/141215706-70cbdc4c-e4b8-4e52-8db1-326c0eecffe2.png" width="650" height="220"/>
 
-![](https://user-images.githubusercontent.com/48341349/141215698-2cd5b57e-4bec-4e4a-af6a-f386c7f50ed4.png)
+<img src="https://user-images.githubusercontent.com/48341349/141215698-2cd5b57e-4bec-4e4a-af6a-f386c7f50ed4.png" width="650" height="800"/>
+
 
 </br>
 
