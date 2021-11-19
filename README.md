@@ -14,14 +14,17 @@
     - Image deblurring
         - Real-World Blur Dataset for Learning and Benchmarking Deblurring Algorithms (dataset, no review)
         - Multi-Stage Progressive Image Restoration (MPRNet) 
- 
-4. Domain Adaptation
+
+4. Image Retrieval
+    - CGD
+
+5. Domain Adaptation
     - DRANet
 
-5. NLP
+6. NLP
     - BERT
 
-6. Action recognition
+7. Action recognition
     - Slow-Fast
 
 x. Etc
