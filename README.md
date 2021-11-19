@@ -8,6 +8,7 @@
 2.	Image classification
     - Meta pseudo label
     - Efficient net
+    - CoATNet
 
 3. Image enhancement
     - Image deblurring
