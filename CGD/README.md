@@ -54,7 +54,9 @@
 - Given an image I, the output of the final layer C x H x W 3D tensor(we call it as **'x'**)
 - χc is the activation result set here (feature map c ∈ {1...C}).
 - global descriptor gets **x** as input and generate vector **f** by taking pooling process.
+
   ![image](https://user-images.githubusercontent.com/32179857/142573169-293377fb-230b-4816-b2ab-f859380cd487.png)
+  
 - The global descriptor is decided by the term ![image](https://user-images.githubusercontent.com/32179857/142573292-a3a9c2db-667c-452a-b0cb-62b0f332795b.png).
     - ![image](https://user-images.githubusercontent.com/32179857/142573328-fb4176a6-2b45-4cba-b0a7-3863df149439.png) = 1    : SPoC
     - ![image](https://user-images.githubusercontent.com/32179857/142573328-fb4176a6-2b45-4cba-b0a7-3863df149439.png) = ∞    : MAC
