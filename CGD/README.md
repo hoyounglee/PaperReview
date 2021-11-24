@@ -73,6 +73,11 @@
     ![image](https://user-images.githubusercontent.com/32179857/142574264-7692fa95-c6f9-438e-8c2a-c5fdc024089e.png)
 
 - loss for this global descriptor is batch-hard triplet loss
+    ##### triplet loss
+    ![image](https://user-images.githubusercontent.com/32179857/143182741-15faee0e-5b77-4d20-81f3-14cf6850081f.png)
+
+    ![image](https://user-images.githubusercontent.com/32179857/143182673-b202f48b-b8aa-4445-9c4c-e666c2fd184a.png)
+
     ##### example of triplet loss
     
     ![image](https://user-images.githubusercontent.com/32179857/142575109-cf79a4df-3ad8-4d4b-a481-047329deb371.png)
@@ -82,6 +87,58 @@
     
     ![image](https://user-images.githubusercontent.com/32179857/142575246-71642f51-a8aa-46b7-bca8-72685ff57b5c.png)
 
+    ##### sample code for hard-positive sampling
+    ```python
+    def batch_hard_triplet_loss(labels, embeddings, margin, squared=False):
+        """Build the triplet loss over a batch of embeddings.
+
+        For each anchor, we get the hardest positive and hardest negative to form a triplet.
+
+        Args:
+            labels: labels of the batch, of size (batch_size,)
+            embeddings: tensor of shape (batch_size, embed_dim)
+            margin: margin for triplet loss
+            squared: Boolean. If true, output is the pairwise squared euclidean distance matrix.
+                     If false, output is the pairwise euclidean distance matrix.
+
+        Returns:
+            triplet_loss: scalar tensor containing the triplet loss
+        """
+        # Get the pairwise distance matrix
+        pairwise_dist = _pairwise_distances(embeddings, squared=squared)
+
+        # For each anchor, get the hardest positive
+        # First, we need to get a mask for every valid positive (they should have same label)
+        mask_anchor_positive = _get_anchor_positive_triplet_mask(labels)
+        mask_anchor_positive = tf.to_float(mask_anchor_positive)
+
+        # We put to 0 any element where (a, p) is not valid (valid if a != p and label(a) == label(p))
+        anchor_positive_dist = tf.multiply(mask_anchor_positive, pairwise_dist)
+
+        # shape (batch_size, 1)
+        hardest_positive_dist = tf.reduce_max(anchor_positive_dist, axis=1, keepdims=True)
+
+        # For each anchor, get the hardest negative
+        # First, we need to get a mask for every valid negative (they should have different labels)
+        mask_anchor_negative = _get_anchor_negative_triplet_mask(labels)
+        mask_anchor_negative = tf.to_float(mask_anchor_negative)
+
+        # We add the maximum value in each row to the invalid negatives (label(a) == label(n))
+        max_anchor_negative_dist = tf.reduce_max(pairwise_dist, axis=1, keepdims=True)
+        anchor_negative_dist = pairwise_dist + max_anchor_negative_dist * (1.0 - mask_anchor_negative)
+
+        # shape (batch_size,)
+        hardest_negative_dist = tf.reduce_min(anchor_negative_dist, axis=1, keepdims=True)
+
+        # Combine biggest d(a, p) and smallest d(a, n) into final triplet loss
+        triplet_loss = tf.maximum(hardest_positive_dist - hardest_negative_dist + margin, 0.0)
+
+        # Get final mean triplet loss
+        triplet_loss = tf.reduce_mean(triplet_loss)
+
+        return triplet_loss
+    ```
+    
 - Thie framework has 2 benefits mainly.
     - ensemble effect by adding few parameters.
     - expandable / widley applicable without diversity control, by using each branch output.
