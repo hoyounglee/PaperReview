@@ -27,6 +27,9 @@
 7. Action recognition
     - Slow-Fast
 
+8. Image Generation
+    - StarGANv2
+
 x. Etc
     - Convolutions
     - Normalizations
