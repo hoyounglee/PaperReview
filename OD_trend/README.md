@@ -71,7 +71,7 @@
 - Mean Average Precision
 - TP, FP, TN, FN
 
-    <img width="578" alt="image" src="https://user-images.githubusercontent.com/32179857/176095038-8e5d911b-1297-4298-bd27-a84b24697ecf.png">
+    <img width="680" alt="image" src="https://user-images.githubusercontent.com/32179857/176380654-d8c7b29c-539b-4c64-895b-c26dd7b9005f.png">
 
 - Suppose we detect 10 apples for the image that has 5 apples.
 - We write the result in the order of confidence scoer (highly confident)
