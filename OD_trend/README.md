@@ -87,9 +87,15 @@
 
 #### Anchors
 - anchors are required to get candidate bounding box for the model to inference.
+- Anchor boxes
+    - fixed anchor for classes
+    <img width="317" alt="image" src="https://user-images.githubusercontent.com/32179857/177083179-3ef0b6e0-a0df-48a3-959c-5a7b87481165.png">
 
+    - anchors by clustering (unsupervised)
+    <img width="467" alt="image" src="https://user-images.githubusercontent.com/32179857/177083224-c2870d96-295b-4663-a4e1-0c8886159d8f.png">
 
-
+    - anchor free
+    
 
 ## 1-Stage Detectors
 - backbone + detector head
