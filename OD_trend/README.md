@@ -95,7 +95,8 @@
     <img width="467" alt="image" src="https://user-images.githubusercontent.com/32179857/177083224-c2870d96-295b-4663-a4e1-0c8886159d8f.png">
 
     - anchor free
-    
+    <img width="737" alt="image" src="https://user-images.githubusercontent.com/32179857/177099849-43308ea8-d837-4ff9-a4fa-1fc9cf417f2e.png">
+
 
 ## 1-Stage Detectors
 - backbone + detector head
@@ -124,15 +125,40 @@
 <img width="995" alt="image" src="https://user-images.githubusercontent.com/32179857/177068064-ce8d064c-c878-46ee-bc26-283835bf5b59.png">
 
 
+### Yolo (You Only Look at Once)
+- set initial anchor boxes by k-means clustering
+- Rather than directly predicting the bounding box dimensions, we'll reformulate our task in order to simply predict the offset from our bounding box prior dimensions such that we can fine-tune our predicted bounding box dimensions.
 
-### SSD
-- single shot detector
+  <img width="256" alt="image" src="https://user-images.githubusercontent.com/32179857/177100671-9aae3f63-b366-4872-9056-032d5a0634eb.png">
+  
+- using 'objectnesss score' ==> set 1.0 to highest IoU scored box, 0 for the rests.
+- output:   objectness + class + bounding box coordinates.
+- process
+```
+1. divide into grids
+2. predict bounding boxes for each grid
+3. do regression
+```
+
+<img width="852" alt="image" src="https://user-images.githubusercontent.com/32179857/177107563-48af1876-10d6-4d7f-ba3e-a06cb3d7fc37.png">
+
+
+### SSD (Single Shot Detector)
 - VGG16 model is used for pretrained classifier backbone.
 - bounding box
 > Rather than using k-means clustering to discover aspect ratios, the SSD model manually defines a collection of aspect ratios (eg. {1, 2, 3, 1/2, 1/3}) to use for the B bounding boxes at each grid cell location.
+- output:   class + bounding box coordinates.
+- process
+```
+1. multiple conv layers for multiple scaled images.
+2. get features from multiple layers
+3. do nms for layers to get final bounding boxes
+```
+
+<img width="852" alt="image" src="https://user-images.githubusercontent.com/32179857/177107439-b4a39aee-595c-493f-9219-63e3d0992d64.png">
 
 
-### Yolo
+
 
 ## 2-Stage Detectors
 - backbone + rpn neck + detector headd
@@ -147,5 +173,6 @@
 ### References
 - https://deepsense.io/region-of-interest-pooling-explained/
 - https://www.jeremyjordan.me/object-detection-one-stage/ 
+- https://nuguziii.github.io/survey/S-001/
 - 
 
