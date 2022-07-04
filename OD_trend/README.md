@@ -88,7 +88,33 @@
 ## 1-Stage Detectors
 - backbone + detector head
 
+ > We'll refer to this part of the architecture as the "backbone" network, which is usually pre-trained as an image classifier to more cheaply learn how to extract features from an image. This is a result of the fact that data for image classification is easier (and thus cheaper) to label as it only requires a single label as opposed to defining bounding box annotations for each image. Thus, we can train on a very large labeled dataset (such as ImageNet) in order to learn good feature representations.
+ 
+### Process
+1. pretrain classification backbone with large dataset
+
+<img width="1018" alt="image" src="https://user-images.githubusercontent.com/32179857/177067649-b29f502b-d95b-4247-b730-8d2a9957d39e.png">
+
+2. remove last few layer so that our backbone network outputs a collection of stacked feature maps (low spatial resolution albeit a high feature (channel) resolution.)
+
+<img width="1029" alt="image" src="https://user-images.githubusercontent.com/32179857/177067743-76fd3250-2710-4134-b94d-69226fdc7a99.png">
+
+3. relate this 7x7 grid back to the original input in order to understand what each grid cell represents relative to the original image.
+
+<img width="1029" alt="image" src="https://user-images.githubusercontent.com/32179857/177067673-1d03ec4e-4971-432f-a996-11e6fd618918.png">
+
+4. determine roughly where objects are located in the coarse (7x7) feature maps by observing which grid cell contains the center of our bounding box annotation.
+
+<img width="825" alt="image" src="https://user-images.githubusercontent.com/32179857/177067985-54bf2723-53df-44a9-8205-50bbb70f5b86.png">
+
+5. In order to detect this object, we will add another convolutional layer and learn the kernel parameters which combine the context of all 512 feature maps in order to produce an activation corresponding with the grid cell which contains our object.
+
+<img width="995" alt="image" src="https://user-images.githubusercontent.com/32179857/177068064-ce8d064c-c878-46ee-bc26-283835bf5b59.png">
+
+
+
 ### SSD
+
 ### Yolo
 
 ## 2-Stage Detectors
