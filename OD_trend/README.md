@@ -82,14 +82,18 @@
 <img width="629" alt="image" src="https://user-images.githubusercontent.com/32179857/176098994-40ef704f-5557-4ac6-b192-de20f652e091.png">
 
 - mAP: AP over all classes
-
+- Precision-Recall curve
+    https://ardentdays.tistory.com/20
 
 ## 1-Stage Detectors
 - backbone + detector head
 
+### SSD
+### Yolo
+
 ## 2-Stage Detectors
 - backbone + rpn neck + detector headd
-- 
+#### Faster RCNN 
 
 ## Backbone, Neck, Head
 
@@ -99,5 +103,6 @@
    
 ### References
 - https://deepsense.io/region-of-interest-pooling-explained/
-
+- https://www.jeremyjordan.me/object-detection-one-stage/ 
+- 
 
