@@ -85,6 +85,12 @@
 - Precision-Recall curve
     https://ardentdays.tistory.com/20
 
+#### Anchors
+- anchors are required to get candidate bounding box for the model to inference.
+
+
+
+
 ## 1-Stage Detectors
 - backbone + detector head
 
@@ -114,6 +120,11 @@
 
 
 ### SSD
+- single shot detector
+- VGG16 model is used for pretrained classifier backbone.
+- bounding box
+> Rather than using k-means clustering to discover aspect ratios, the SSD model manually defines a collection of aspect ratios (eg. {1, 2, 3, 1/2, 1/3}) to use for the B bounding boxes at each grid cell location.
+
 
 ### Yolo
 
