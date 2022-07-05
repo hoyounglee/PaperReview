@@ -182,9 +182,9 @@
 
 ##### Anchor boxes
 - Faster RCNN uses 9 anchor boxes
-      <img width="694" alt="image" src="https://user-images.githubusercontent.com/32179857/177227316-a98ec226-e2af-40e5-8e2c-b3614498e5c8.png">
+ <img width="694" alt="image" src="https://user-images.githubusercontent.com/32179857/177227316-a98ec226-e2af-40e5-8e2c-b3614498e5c8.png">
 
-      <img width="585" alt="image" src="https://user-images.githubusercontent.com/32179857/177227424-a5ba37a5-001a-4e97-860c-552af1b76ed6.png">
+ <img width="585" alt="image" src="https://user-images.githubusercontent.com/32179857/177227424-a5ba37a5-001a-4e97-860c-552af1b76ed6.png">
 
 #### RPN
   <img width="737" alt="image" src="https://user-images.githubusercontent.com/32179857/177227458-7cd922e5-4025-4d09-9531-c42aa20827a5.png">
