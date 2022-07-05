@@ -128,6 +128,8 @@
 ### Yolo (You Only Look at Once)
 - set initial anchor boxes by k-means clustering
 - Rather than directly predicting the bounding box dimensions, we'll reformulate our task in order to simply predict the offset from our bounding box prior dimensions such that we can fine-tune our predicted bounding box dimensions.
+- Only detects a single class from a single grid
+- No multi scale, so weak at detecting small objects.
 
   <img width="256" alt="image" src="https://user-images.githubusercontent.com/32179857/177100671-9aae3f63-b366-4872-9056-032d5a0634eb.png">
   
@@ -146,6 +148,10 @@
 ### SSD (Single Shot Detector)
 - VGG16 model is used for pretrained classifier backbone.
 - bounding box
+- by removing FC layer from YOLO,
+    - no need to fix the input size
+    - much smaller # of parameters
+
 > Rather than using k-means clustering to discover aspect ratios, the SSD model manually defines a collection of aspect ratios (eg. {1, 2, 3, 1/2, 1/3}) to use for the B bounding boxes at each grid cell location.
 - output:   class + bounding box coordinates.
 - process
@@ -157,22 +163,50 @@
 
 <img width="852" alt="image" src="https://user-images.githubusercontent.com/32179857/177107439-b4a39aee-595c-493f-9219-63e3d0992d64.png">
 
+- multi scale sample
+
+<img width="487" alt="image" src="https://user-images.githubusercontent.com/32179857/177226104-f07e1147-0b27-4c32-a82c-958dadb6d7f0.png">
 
 
 
 ## 2-Stage Detectors
 - backbone + rpn neck + detector headd
 #### Faster RCNN 
+<img width="342" alt="image" src="https://user-images.githubusercontent.com/32179857/177226189-acd5ec86-e043-4d53-a59b-80e4578e24ee.png">
+
+##### Process
+1) extract feature map by inputting image to pretrained CNN model.
+2) get region proposal by passing feature map to RPN model.
+3) region proposals + feature map --> RoI pooling --> get fixed size feature map. 
+4) input feature map to CNN model to perform bounding box regression and classification
+
+##### Anchor boxes
+- Faster RCNN uses 9 anchor boxes
+      <img width="694" alt="image" src="https://user-images.githubusercontent.com/32179857/177227316-a98ec226-e2af-40e5-8e2c-b3614498e5c8.png">
+
+      <img width="585" alt="image" src="https://user-images.githubusercontent.com/32179857/177227424-a5ba37a5-001a-4e97-860c-552af1b76ed6.png">
+
+#### RPN
+  <img width="737" alt="image" src="https://user-images.githubusercontent.com/32179857/177227458-7cd922e5-4025-4d09-9531-c42aa20827a5.png">
+
+#### Loss
+  <img width="642" alt="image" src="https://user-images.githubusercontent.com/32179857/177227798-b5955760-e45c-4b4b-81e8-9b678487dd1e.png">
+
 
 ## Backbone, Neck, Head
+1. Backbone
+  - feature extractor
+2. Neck
+  - FPN
+3. Head
+  - Detector Head
+  
+<img width="764" alt="image" src="https://user-images.githubusercontent.com/32179857/177227895-e8890d1b-5467-43b8-811e-ebc0e5fe6b90.png">
 
 
-## Transformers
-
-   
 ### References
 - https://deepsense.io/region-of-interest-pooling-explained/
 - https://www.jeremyjordan.me/object-detection-one-stage/ 
 - https://nuguziii.github.io/survey/S-001/
-- 
-
+- https://herbwood.tistory.com/10
+- https://velog.io/@hewas1230/ObjectDetection-Architecture
